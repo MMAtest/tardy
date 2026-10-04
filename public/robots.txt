@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://casing-tardy.com/sitemap.xml
