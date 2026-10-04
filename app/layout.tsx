@@ -5,7 +5,6 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),
   title: { default: "Casing Tardy — Boyaux, épices, marinades & emballages", template: "%s | Casing Tardy" },
   description: "Casing Tardy accompagne les professionnels de la charcuterie depuis 1894 : boyaux naturels, épices, marinades et solutions de conditionnement.",
-  alternates: { canonical: "/" },
   openGraph: { type:"website", locale:"fr_FR", siteName:"Casing Tardy", title:"Casing Tardy — L'expertise charcutière depuis 1894", description:"Boyaux naturels, épices, marinades et emballages pour les professionnels." },
   robots: { index:true, follow:true },
 };
