@@ -115,3 +115,6 @@ html,body{max-width:100%;overflow-x:hidden}
 .homeCommitment .homePartners>div{background:transparent!important;border:0!important;box-shadow:none!important}
 .homeCommitment .homePartners img{max-height:118px;max-width:220px;background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important}
 @media(max-width:650px){.homeProductionFigures .qualityIcon{width:46px;height:46px}.homeProductionFigures .qualityIcon svg{width:42px;height:42px}.homeCommitment .homePartners img{max-height:100px;max-width:190px}}
+/* Category pages: do not repeat the page title inside anatomical navigation */
+.animalIntro>.eyebrow+.animalLinks{margin-top:28px}
+.technicalEntrySingle .technicalMain>p:first-child{margin-top:0}

@@ -14,7 +14,7 @@ const products=[
 export const metadata={title:"Boyaux de porc et de truie",alternates:{canonical:"/nos-produits/boyaux-de-porc/"}};
 export default function Page(){return <main>
 <section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/nos-produits/">Boyaux naturels</a><span>·</span><span>Porc</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Boyaux de Porc</div><h1>Boyaux de porc et de truie</h1></div></div></div></section>
-<section className="section"><div className="shell animalGrid"><div className="animalIntro"><div className="eyebrow">Navigation anatomique</div><h2>Boyaux de porc et de truie</h2><div className="animalLinks">{products.filter((p,i)=>![3].includes(i)).map(p=><a href={p.href} key={p.title}><span>{p.title}</span><span>↗</span></a>)}</div></div><AnimalMap kind="porc"/></div></section>
+<section className="section"><div className="shell animalGrid"><div className="animalIntro"><div className="eyebrow">Navigation anatomique</div><div className="animalLinks">{products.filter((p,i)=>![3].includes(i)).map(p=><a href={p.href} key={p.title}><span>{p.title}</span><span>↗</span></a>)}</div></div><AnimalMap kind="porc"/></div></section>
 <section className="section pale"><div className="shell"><div className="technicalCatalog">{products.map((p,i)=><article className="technicalEntry" key={p.title}><div className="technicalNumber">{String(i+1).padStart(2,"0")}</div><div className="technicalMain"><a href={p.href}><h2>{p.title}</h2></a><p>{p.intro}</p></div><dl className="technicalSpecs">{p.rows.map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></article>)}</div></div></section>
 <LegacyQuality/>
 </main>}

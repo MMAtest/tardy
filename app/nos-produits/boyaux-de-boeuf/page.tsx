@@ -8,7 +8,7 @@ const products=[
 export const metadata={title:"Boyaux de bœuf",alternates:{canonical:"/nos-produits/boyaux-de-boeuf/"}};
 export default function Page(){return <main>
 <section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/nos-produits/">Boyaux naturels</a><span>·</span><span>Bœuf</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Boyaux de Boeuf</div><h1>Nos boyaux de Bœuf</h1></div></div></div></section>
-<section className="section"><div className="shell animalGrid"><div className="animalIntro"><div className="eyebrow">Navigation anatomique</div><h2>Nos boyaux de Bœuf</h2><div className="animalLinks">{products.map(p=><a href={p.href} key={p.title}><span>{p.title}</span><span>↗</span></a>)}</div></div><AnimalMap kind="boeuf"/></div></section>
+<section className="section"><div className="shell animalGrid"><div className="animalIntro"><div className="eyebrow">Navigation anatomique</div><div className="animalLinks">{products.map(p=><a href={p.href} key={p.title}><span>{p.title}</span><span>↗</span></a>)}</div></div><AnimalMap kind="boeuf"/></div></section>
 <section className="section pale"><div className="shell"><div className="technicalCatalog">{products.map((p,i)=><article className="technicalEntry" key={p.title}><div className="technicalNumber">{String(i+1).padStart(2,"0")}</div><div className="technicalMain"><a href={p.href}><h2>{p.title}</h2></a><p>{p.intro}</p></div><dl className="technicalSpecs">{p.rows.map(([k,v])=><div key={k}><dt>{k}</dt><dd>{v}</dd></div>)}</dl></article>)}</div></div></section>
 <LegacyQuality/>
 </main>}
