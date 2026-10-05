@@ -63,3 +63,9 @@ html,body{max-width:100%;overflow-x:hidden}
   .sectionHead h2,.editorialTitle{font-size:clamp(42px,12vw,50px)!important;max-width:100%}
   .marinadeHoverName{font-size:22px}
 }
+/* Product sheets: compact interactive animal navigation */
+.animalMapReal.productAnimalMap{height:390px;min-height:390px;max-width:980px;margin:0 auto}.animalMapReal.productAnimalMap img{height:100%;width:100%;object-fit:contain;padding:18px}.animalMapReal.productAnimalMap .animalLegend{font-size:9px}
+@media(max-width:720px){.animalMapReal.productAnimalMap{height:300px;min-height:300px}.animalMapReal.productAnimalMap img{padding:8px}}
+/* Preserve the square source ratio so hotspot coordinates stay aligned */
+.animalMapReal.productAnimalMap{width:min(560px,100%);height:auto!important;min-height:0!important;aspect-ratio:1/1;margin:0 auto}.animalMapReal.productAnimalMap img{width:100%;height:100%;object-fit:contain;padding:14px}.animalMapReal.productAnimalMap .hotspot{z-index:3}
+@media(max-width:720px){.animalMapReal.productAnimalMap{width:min(330px,100%);height:auto!important;min-height:0!important}.animalMapReal.productAnimalMap img{padding:6px}}
