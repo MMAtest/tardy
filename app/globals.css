@@ -118,3 +118,32 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Category pages: do not repeat the page title inside anatomical navigation */
 .animalIntro>.eyebrow+.animalLinks{margin-top:28px}
 .technicalEntrySingle .technicalMain>p:first-child{margin-top:0}
+/* ===== Home motion: subtle, premium, accessible ===== */
+@keyframes homeHeroCopyIn{from{opacity:0;transform:translate3d(0,20px,0)}to{opacity:1;transform:none}}
+@keyframes homeHeroSinceIn{from{opacity:0;transform:translate3d(0,16px,0)}to{opacity:1;transform:none}}
+.homeHeroCopy{animation:homeHeroCopyIn .85s cubic-bezier(.22,1,.36,1) .08s both}
+.homeSince{animation:homeHeroSinceIn .8s cubic-bezier(.22,1,.36,1) .36s both}
+.homeHeroImage{transform:translate3d(0,var(--parallax-y,0),0) scale(1.025);will-change:transform;transition:transform .12s linear}
+.historyMain{transform:translate3d(0,var(--parallax-y,0),0);will-change:transform;transition:transform .18s linear}
+.historyInset{transform:translate3d(0,var(--parallax-y,0),0);will-change:transform;transition:transform .18s linear}
+.homeNewsletter>img{transform:translate3d(0,var(--parallax-y,0),0) scale(1.035);will-change:transform;transition:transform .18s linear}
+.homeMotionEnabled .homeReveal{opacity:0;transform:translate3d(0,22px,0);transition:opacity .7s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms),transform .7s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms)}
+.homeMotionEnabled .homeReveal.is-visible{opacity:1;transform:none}
+.homeProductionFigures>div{transition:background-color .25s ease,transform .25s ease,border-color .25s ease}
+.homeProductionFigures>div:hover{transform:translateY(-3px);background:rgba(137,21,54,.035)}
+.homeProductionFigures .qualityIcon{transition:transform .28s cubic-bezier(.22,1,.36,1),color .28s ease}
+.homeProductionFigures>div:hover .qualityIcon{transform:translateY(-2px) scale(1.055);color:#891536}
+.homeProcessGrid article{transition:transform .28s cubic-bezier(.22,1,.36,1),background-color .28s ease}
+.homeProcessGrid article:hover{transform:translateY(-4px);background:rgba(137,21,54,.03)}
+.homePartners img{transition:transform .32s cubic-bezier(.22,1,.36,1),opacity .32s ease}
+.homePartners>div:hover img{transform:translateY(-4px) scale(1.035)}
+.homeNewsletterButton{transition:transform .25s ease,box-shadow .25s ease,background-color .25s ease}
+.homeNewsletterButton:hover{transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,0,0,.14)}
+@media(max-width:650px){.homeMotionEnabled .homeReveal{transform:translate3d(0,14px,0)}.homeHeroImage,.historyMain,.historyInset,.homeNewsletter>img{transform:none!important;transition:none!important}.homeProductionFigures>div:hover,.homeProcessGrid article:hover,.homePartners>div:hover img{transform:none}}
+@media(prefers-reduced-motion:reduce){.homeHeroCopy,.homeSince{animation:none!important}.homeReveal{opacity:1!important;transform:none!important;transition:none!important}.homeHeroImage,.historyMain,.historyInset,.homeNewsletter>img{transform:none!important;transition:none!important}.homeProductionFigures>div,.homeProductionFigures .qualityIcon,.homeProcessGrid article,.homePartners img,.homeNewsletterButton{transition:none!important}}
+/* Motion safety: content always remains visible if JS/scroll events are throttled */
+@keyframes homeRevealIn{from{opacity:0;transform:translate3d(0,22px,0)}to{opacity:1;transform:none}}
+.homeMotionEnabled .homeReveal{opacity:1!important;transform:none!important;transition:none!important}
+.homeMotionEnabled .homeReveal.is-visible{animation:homeRevealIn .7s cubic-bezier(.22,1,.36,1) var(--reveal-delay,0ms) both}
+@media(max-width:650px){@keyframes homeRevealIn{from{opacity:0;transform:translate3d(0,14px,0)}to{opacity:1;transform:none}}}
+@media(prefers-reduced-motion:reduce){.homeMotionEnabled .homeReveal.is-visible{animation:none!important}}

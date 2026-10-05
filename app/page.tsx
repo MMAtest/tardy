@@ -1,7 +1,8 @@
+import HomeMotion from "./components/HomeMotion";
 export const metadata={alternates:{canonical:"/"}};
 
 export default function Home(){
-  return <main>
+  return <main><HomeMotion/>
     <section className="homeHero">
       <img className="homeHeroImage" src="/assets/home-original/hero.jpg" alt="Charcuteries artisanales utilisant des boyaux naturels"/>
       <div className="homeHeroShade"/>
