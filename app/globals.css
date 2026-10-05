@@ -44,3 +44,22 @@
 .homePartners{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:42px;background:transparent!important;border:0!important;margin-top:50px;align-items:center}.homePartners>div{height:auto!important;min-height:0!important;background:transparent!important;border:0!important;box-shadow:none!important;padding:0!important;display:flex!important;align-items:center;justify-content:center}.homePartners img{max-height:92px;max-width:190px;width:auto;height:auto;object-fit:contain;background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important;opacity:1!important}
 @media(max-width:900px){.marinadeHoverGrid{grid-template-columns:repeat(2,minmax(0,1fr))}.homePartners{gap:28px}}
 @media(max-width:650px){.marinadeHoverGrid{grid-template-columns:1fr}.marinadeHoverMedia{height:auto}.marinadeHoverMedia>img{height:300px;padding:18px}.homePartners{grid-template-columns:1fr;gap:24px}.homePartners img{max-height:80px}}
+/* Mobile overflow / header QA */
+html,body{max-width:100%;overflow-x:hidden}
+.headerActions{justify-self:end;min-width:0}.headerInner>*{min-width:0}
+.homeHeroInner,.homeHeroCopy,.pageHeroGrid>*,.sectionHead>*,.storySplit>*,.productDetail>*,.homeHistoryGrid>*,.homeQualityGrid>*,.homeProductionBody>*,.homeCommitmentGrid>*{min-width:0}
+.homeHeroCopy,.pageHero p,.sectionHead p,.sourceIntro,.productCopy,.storyCopy{overflow-wrap:anywhere}
+@media(max-width:720px){
+  .headerInner{grid-template-columns:minmax(0,1fr) auto!important;gap:12px!important;width:92vw}
+  .headerActions{display:flex!important;justify-self:end!important;position:relative;z-index:95}
+  .mobileMenu{display:block!important}
+  .mobileMenu>summary{display:flex;align-items:center;justify-content:center;min-width:64px;white-space:nowrap;background:var(--cream)}
+  .mobilePanel{position:absolute!important;right:0!important;left:auto!important;top:48px!important;max-height:75vh;overflow:auto}
+  .homeHeroCopy{width:100%;max-width:100%}
+  .homeHeroCopy h1{font-size:clamp(48px,14vw,58px)!important;line-height:.9!important;max-width:100%}
+  .homeHeroCopy p{width:100%;max-width:100%;font-size:16px;line-height:1.7}
+  .pageHeroGrid{width:100%}.pageHero h1{font-size:clamp(48px,14vw,58px)!important;max-width:100%}
+  .pageHero p{width:100%;max-width:100%}
+  .sectionHead h2,.editorialTitle{font-size:clamp(42px,12vw,50px)!important;max-width:100%}
+  .marinadeHoverName{font-size:22px}
+}

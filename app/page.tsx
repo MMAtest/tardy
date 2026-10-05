@@ -99,7 +99,7 @@ export default function Home(){
             <div className="eyebrow">Un processus complet pour la préparation de vos commandes</div>
             <h2>La qualité et l’innovation pour un service client optimal</h2>
           </div>
-          <p>Le service Tardy repose sur trois piliers qui figuraient déjà sur le site historique du client.</p>
+          <p>De la sélection des matières premières à la livraison, Tardy maîtrise chaque étape pour assurer régularité, sécurité et qualité de service.</p>
         </div>
         <div className="homeProcessGrid">
           <article>
