@@ -83,10 +83,10 @@ export default function Home(){
             <a className="btn" href="/nos-produits/">Nos boyaux naturels →</a>
           </div>
           <div className="homeProductionFigures">
-            <div><strong>Ø</strong><span>Contrôle du diamètre</span></div>
-            <div><strong>↔</strong><span>Contrôle de la longueur</span></div>
-            <div><strong>✓</strong><span>Résistance & état du boyau</span></div>
-            <div><strong>+</strong><span>Analyses bactériologiques</span></div>
+            <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="13"/><path d="M8 24h32"/><path d="m12 19-5 5 5 5M36 19l5 5-5 5"/></svg></span><span>Contrôle du diamètre</span></div>
+            <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 16h34v16H7z"/><path d="M13 16v8M19 16v5M25 16v8M31 16v5M37 16v8"/><path d="M11 38h26"/><path d="m15 34-4 4 4 4M33 34l4 4-4 4"/></svg></span><span>Contrôle de la longueur</span></div>
+            <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg></span><span>Résistance & état du boyau</span></div>
+            <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M18 6h12"/><path d="M21 6v12L11 36c-2 4 1 7 5 7h16c4 0 7-3 5-7L27 18V6"/><path d="M16 32h16"/><circle cx="20" cy="36" r="1.5"/><circle cx="27" cy="29" r="1.5"/></svg></span><span>Analyses bactériologiques</span></div>
           </div>
         </div>
       </div>

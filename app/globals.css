@@ -100,3 +100,18 @@ html,body{max-width:100%;overflow-x:hidden}
 /* Quality/service block as an editorial sequence, not four cards */
 .processBand{display:block!important;background:transparent!important;border:0!important;border-top:1px solid var(--line)!important;margin-top:36px!important}.processBand>div{display:grid!important;grid-template-columns:minmax(240px,.72fr) 1.28fr!important;gap:42px!important;align-items:start!important;background:transparent!important;padding:26px 0!important;border-bottom:1px solid var(--line)!important}.processBand h3{font-size:27px!important;margin:0!important}.processBand p{margin:0!important;font-size:13px!important;line-height:1.7!important}.processBand .btn{margin-top:16px}
 @media(max-width:650px){.processBand>div{grid-template-columns:1fr!important;gap:10px!important;padding:22px 0!important}.technicalSectionTitle{font-size:40px!important}}
+/* Quality control pictograms */
+.homeProductionFigures .qualityIcon{width:54px;height:54px;display:grid;place-items:center;color:var(--red-dark)}
+.homeProductionFigures .qualityIcon svg{width:48px;height:48px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.homeProductionFigures>div{gap:22px}
+.homeProductionFigures>div>span:last-child{font-size:13px;line-height:1.45;color:var(--ink)}
+
+/* Standards block: exact background color from the original Tardy site */
+.homeCommitment{background:#891536!important;color:#fff}
+.homeCommitment .eyebrow{color:#f2c7d3!important}
+.homeCommitment h2,.homeCommitment h3{color:#fff!important}
+.homeCommitment p{color:rgba(255,255,255,.88)!important}
+.homeCommitment .homePartners{background:transparent!important;border:0!important}
+.homeCommitment .homePartners>div{background:transparent!important;border:0!important;box-shadow:none!important}
+.homeCommitment .homePartners img{max-height:118px;max-width:220px;background:transparent!important;border:0!important;box-shadow:none!important;filter:none!important}
+@media(max-width:650px){.homeProductionFigures .qualityIcon{width:46px;height:46px}.homeProductionFigures .qualityIcon svg{width:42px;height:42px}.homeCommitment .homePartners img{max-height:100px;max-width:190px}}
