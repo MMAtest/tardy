@@ -1,10 +1,15 @@
 import EpicenouBrand from "../components/EpicenouBrand";
 import LegacyQuality from "../components/LegacyQuality";
-const refs=[["Chapelure","Panade de blé : farine de blé, levure, sel"],["Chapelure jaune","Panade de blé : farine de blé, levure, sel, épices"],["Chapelure dorée","Blé, seigle, orge"],["Panade Toscane","Carotte, paprika, basilic"]];
+const refs=[
+["Chapelure","Panade de blé : farine de blé, levure, sel","/assets/products/chapelures/chapelure.webp",false],
+["Chapelure jaune","Panade de blé : farine de blé, levure, sel, épices","/assets/products/external/breadcrumbs.webp",true],
+["Chapelure dorée","Blé, seigle, orge","/assets/products/chapelures/chapelure-doree.webp",false],
+["Panade Toscane","Carotte, paprika, basilic","/assets/schnitzel-g9b1dff796_1920.jpg",true]
+] as const;
 export const metadata={title:"Les chapelures",alternates:{canonical:"/les-chapelures/"}};
 export default function Page(){return <main>
 <section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/epices-epicenou/">Épices</a><span>·</span><span>Chapelures</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Conditionnement : sac de 1 kg</div><h1>Les chapelures</h1></div></div></div></section>
 <EpicenouBrand compact/>
-<section className="section"><div className="shell productDetail"><div className="chapelureVisualStack"><figure><img src="/assets/chapelure.jpg" alt="Chapelures"/><figcaption>Chapelure</figcaption></figure><figure><img src="/assets/schnitzel-g9b1dff796_1920.jpg" alt="Application de chapelure sur une préparation"/><figcaption>Exemple d’application</figcaption></figure></div><div className="productCopy"><div className="eyebrow">Gamme</div><h2 className="catalogSubheading">Panades & chapelures</h2><div className="technicalTable compactTable">{refs.map(([n,d])=><div className="technicalTableRow" key={n}><strong>{n}</strong><span>{d}</span></div>)}</div><p>Emballage / Conditionnement : sac de 1 kg.</p></div></div></section>
+<section className="section"><div className="shell chapelureProductIndex">{refs.map(([name,desc,image,illustrative],i)=><article className="chapelureProductRow" key={name}><span>{String(i+1).padStart(2,"0")}</span><figure><img src={image} alt={illustrative?`${name}, illustration`:name}/>{illustrative&&<figcaption>Illustration d’usage</figcaption>}</figure><div><h2>{name}</h2><p>{desc}</p><small>Emballage / Conditionnement : sac de 1 kg.</small></div></article>)}</div></section>
 <LegacyQuality/>
 </main>}

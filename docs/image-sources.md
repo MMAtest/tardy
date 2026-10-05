@@ -60,3 +60,30 @@ Ces visuels sont utilisés uniquement comme illustrations éditoriales et ne rep
   - Usage : stockage / environnement professionnel.
 
 Les fichiers locaux ont été redimensionnés et convertis en WebP ; la composition et le recadrage peuvent donc différer de la source.
+
+## Complément produits — Wikimedia Commons CC0 / domaine public
+
+- `products/external/cayenne.webp`
+  - Source : https://commons.wikimedia.org/wiki/File:Red_Chili_Pepper_PNG.png
+  - Licence : CC0 1.0
+  - Usage : illustration Piment de Cayenne.
+
+- `products/external/espelette.webp`
+  - Source : https://commons.wikimedia.org/wiki/File:A_red_chili_pepper_fruits.jpg
+  - Licence : CC0 1.0
+  - Usage : illustration du piment pour le mix au piment d’Espelette ; ne constitue pas une photographie d’un produit Tardy.
+
+- `products/external/curry.webp`
+  - Source : https://commons.wikimedia.org/wiki/File:Curry_Powder.JPG
+  - Licence : domaine public / PD-self sur Wikimedia Commons.
+  - Usage : illustration Curry.
+
+- `products/external/nutmeg.webp`
+  - Source : https://commons.wikimedia.org/wiki/File:Nutmeg-spice.jpg
+  - Licence : CC0 1.0
+  - Usage : illustration Muscade moulue.
+
+- `products/external/breadcrumbs.webp`
+  - Source : https://commons.wikimedia.org/wiki/File:Chopping_Bread_Crumbs.jpg
+  - Licence : CC0 1.0
+  - Usage : illustration Chapelure jaune.

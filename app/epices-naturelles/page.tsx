@@ -1,16 +1,30 @@
 import EpicenouBrand from "../components/EpicenouBrand";
 import LegacyQuality from "../components/LegacyQuality";
-const refs=["Persil","Herbes de Provence","Poivre blanc moulu","Poivre concassé","Piment de Cayenne","Paprika","Piment doux","Fenouille moulu","Curry","Cumin en poudre","Colombo","Ail en poudre","Ail en granule","Muscade moulue","Oignons granule","Oignons frits","Oignons en lanières","Échalote en poudre","Gingembre en poudre"];
-const spiceChapters=[
-{start:0,image:"/assets/poivre-concasse.png",alt:"Poivre concassé",items:refs.slice(0,5)},
-{start:5,image:"/assets/epicenou/piment-doux.webp",alt:"Piment doux",items:refs.slice(5,10)},
-{start:10,image:"/assets/epicenou/herbes-de-provence.webp",alt:"Herbes de Provence",items:refs.slice(10,15)},
-{start:15,image:"/assets/epicenou/ail-en-poudre.webp",alt:"Ail en poudre",items:refs.slice(15)}
-];
+const spices=[
+["Persil","/assets/products/epices/persil.webp",false],
+["Herbes de Provence","/assets/products/epices/herbes-de-provence.webp",false],
+["Poivre blanc moulu","/assets/products/epices/poivre-blanc-moulu.webp",false],
+["Poivre concassé","/assets/products/epices/poivre-concasse.webp",false],
+["Piment de Cayenne","/assets/products/external/cayenne.webp",true],
+["Paprika","/assets/products/epices/paprika.webp",false],
+["Piment doux","/assets/products/epices/piment-doux.webp",false],
+["Fenouille moulu","/assets/products/epices/fenouil-moulu.webp",false],
+["Curry","/assets/products/external/curry.webp",true],
+["Cumin en poudre","/assets/products/epices/cumin-en-poudre.webp",false],
+["Colombo","/assets/products/epices/colombo.webp",false],
+["Ail en poudre","/assets/products/epices/ail-en-poudre.webp",false],
+["Ail en granule","/assets/products/epices/ail-en-granule.webp",false],
+["Muscade moulue","/assets/products/external/nutmeg.webp",true],
+["Oignons granule","/assets/products/epices/oignons-granule.webp",false],
+["Oignons frits","/assets/products/epices/oignons-frits.webp",false],
+["Oignons en lanières","/assets/products/epices/oignons-lanieres.webp",false],
+["Échalote en poudre","/assets/products/epices/echalote-en-poudre.webp",false],
+["Gingembre en poudre","/assets/products/epices/gingembre-en-poudre.webp",false]
+] as const;
 export const metadata={title:"Épices naturelles",alternates:{canonical:"/epices-naturelles/"}};
 export default function Page(){return <main>
 <section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/epices-epicenou/">Épices</a><span>·</span><span>Naturelles</span></div><div className="pageHeroGrid"><div><h1>Épices naturelles</h1></div><p><strong>Toutes nos épices sont vendues en sacs de 1 kg.</strong></p></div></div></section>
 <EpicenouBrand compact/>
-<section className="section"><div className="shell"><div className="eyebrow spiceFlowHeading">19 références</div><div className="spiceFlow">{spiceChapters.map((group,gi)=><article className="spiceFlowRow" key={group.start}><figure><img src={group.image} alt={group.alt}/></figure><div className="spiceList">{group.items.map((x,i)=><div className="spiceListItem" key={x}><span>{String(group.start+i+1).padStart(2,"0")}</span><strong>{x}</strong></div>)}</div></article>)}</div></div></section>
+<section className="section"><div className="shell"><div className="eyebrow spiceProductHeading">19 références</div><div className="spiceProductIndex">{spices.map(([name,image,illustrative],i)=><article className="spiceProductRow" key={name}><span className="spiceProductNumber">{String(i+1).padStart(2,"0")}</span><figure><img src={image} alt={illustrative?`${name}, illustration`:name}/>{illustrative&&<figcaption>Illustration libre</figcaption>}</figure><h2>{name}</h2></article>)}</div></div></section>
 <LegacyQuality/>
 </main>}
