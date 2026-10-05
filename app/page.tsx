@@ -52,12 +52,12 @@ export default function Home(){
           </div>
         </div>
 
-        <div className="homeColdGrid">
-          <div className="homeColdTitle">
+        <div className="homeQualityNote">
+          <div className="homeQualityNoteTitle">
             <span>01</span>
             <h3>Des entrepôts frigorifiques adaptés à nos ambitions en matière sanitaire</h3>
           </div>
-          <div className="homeColdText">
+          <div className="homeQualityNoteText">
             <p>Nos entrepôts frigorifiques permettent le stockage dans de bonnes conditions des différents produits et notamment des boyaux de mouton.</p>
             <p>Tous nos produits sont répertoriés et portent un numéro de lot qui nous assure leur traçabilité jusqu’à leurs consommations finales.</p>
           </div>
@@ -83,7 +83,7 @@ export default function Home(){
             <p>Nous proposons une gamme complète de boyaux naturels calibrés dans les présentations classiques : en paquets, en filets ainsi que dans des présentations plus élaborées, boyaux montés sur tubes ou plissés.</p>
             <a className="btn" href="/nos-produits/">Nos boyaux naturels →</a>
           </div>
-          <div className="homeProductionFigures">
+          <div className="qualityControlRail">
             <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><circle cx="24" cy="24" r="13"/><path d="M8 24h32"/><path d="m12 19-5 5 5 5M36 19l5 5-5 5"/></svg></span><span>Contrôle du diamètre</span></div>
             <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M7 16h34v16H7z"/><path d="M13 16v8M19 16v5M25 16v8M31 16v5M37 16v8"/><path d="M11 38h26"/><path d="m15 34-4 4 4 4M33 34l4 4-4 4"/></svg></span><span>Contrôle de la longueur</span></div>
             <div><span className="qualityIcon" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11L24 5Z"/><path d="m17 24 5 5 10-11"/></svg></span><span>Résistance & état du boyau</span></div>
@@ -102,7 +102,7 @@ export default function Home(){
           </div>
           <p>De la sélection des matières premières à la livraison, Tardy maîtrise chaque étape pour assurer régularité, sécurité et qualité de service.</p>
         </div>
-        <div className="homeProcessGrid">
+        <div className="homeProcessTimeline">
           <article>
             <span className="processIndex">01</span>
             <h3>Sélection des meilleures provenances</h3>
@@ -143,16 +143,14 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="homeNewsletter">
-      <img src="/assets/home-original/hero.jpg" alt="" aria-hidden="true"/>
-      <div className="homeNewsletterShade"/>
-      <div className="shell homeNewsletterInner">
-        <div>
-          <div className="eyebrow homeHeroEyebrow">Maison Tardy</div>
-          <h2>Inscrivez-vous à notre newsletter<br/>pour recevoir nouvelles & promotions</h2>
-        </div>
-        <a className="btn homeNewsletterButton" href="mailto:commercial@casing-tardy.com?subject=Inscription%20newsletter%20Tardy">Souscrire →</a>
+    <section className="homeNewsletterEditorial">
+      <div className="homeNewsletterEditorialImage"><img src="/assets/home-original/hero.jpg" alt="" aria-hidden="true"/></div>
+      <div className="homeNewsletterEditorialContent">
+        <div className="eyebrow">Maison Tardy</div>
+        <h2>Inscrivez-vous à notre newsletter<br/>pour recevoir nouvelles & promotions</h2>
+        <a className="newsletterTextLink" href="mailto:commercial@casing-tardy.com?subject=Inscription%20newsletter%20Tardy"><span>Souscrire</span><i>↗</i></a>
       </div>
+      <div className="homeNewsletterEditorialYear" aria-hidden="true">1894</div>
     </section>
   </main>
 }

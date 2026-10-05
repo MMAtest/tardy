@@ -18,14 +18,14 @@ export default function HomeMotion() {
     const groups: string[][] = [
       [".homeHistoryVisual", ".homeHistoryCopy"],
       [".homeQualityGrid > div", ".homeQualityMedia"],
-      [".homeColdGrid > div"],
+      [".homeQualityNote > div"],
       [".homeProduction .sectionHead", ".homeProductionText"],
-      [".homeProductionFigures > div"],
+      [".qualityControlRail > div"],
       [".homeProcess .sectionHead"],
-      [".homeProcessGrid article"],
+      [".homeProcessTimeline article"],
       [".homeCommitmentGrid > div"],
       [".homePartners > div"],
-      [".homeNewsletterInner > *"],
+      [".homeNewsletterEditorialContent > *", ".homeNewsletterEditorialImage"],
     ];
 
     const targets: HTMLElement[] = [];
@@ -54,7 +54,7 @@ export default function HomeMotion() {
       const hero = document.querySelector<HTMLElement>(".homeHeroImage");
       const history = document.querySelector<HTMLElement>(".historyMain");
       const inset = document.querySelector<HTMLElement>(".historyInset");
-      const newsletter = document.querySelector<HTMLElement>(".homeNewsletter > img");
+      const newsletter = document.querySelector<HTMLElement>(".homeNewsletterEditorialImage img");
 
       if (hero) hero.style.setProperty("--parallax-y", `${Math.min(y * 0.045, 30)}px`);
 
