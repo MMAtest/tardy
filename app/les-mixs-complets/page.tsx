@@ -1,3 +1,4 @@
+import EpicenouBrand from "../components/EpicenouBrand";
 import LegacyQuality from "../components/LegacyQuality";
 const cuire=[
 ["Préparation merguez","paprika, piment fort, coriandre","Sans allergènes","Seau 10 kg"],
@@ -24,6 +25,8 @@ function List({items}:{items:string[][]}){return <div className="catalogLines">{
 export const metadata={title:"Les mixs complets",alternates:{canonical:"/les-mixs-complets/"}};
 export default function Page(){return <main>
 <section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/epices-epicenou/">Épices</a><span>·</span><span>Mixs complets</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Epicenou</div><h1>Les mixs complets</h1></div></div></div></section>
+<EpicenouBrand compact/>
+<section className="section mixVisualIntro"><div className="shell mixVisualGrid"><figure><img src="/assets/chipolata-herbes.jpg" alt="Préparation mix chipo aux herbes"/><figcaption>Préparation mix chipo aux herbes</figcaption></figure><figure><img src="/assets/mix-mexicaine.jpg" alt="Mix saucisse mexicaine"/><figcaption>Mix saucisse mexicaine</figcaption></figure><figure><img src="/assets/mix-volaille.jpg" alt="Mix saucisse volaille"/><figcaption>Mix saucisse volaille</figcaption></figure><figure><img src="/assets/saucisse-villageoise.jpg" alt="Préparation saucisse villageoise"/><figcaption>Préparation saucisse villageoise</figcaption></figure></div></section>
 <section className="section"><div className="shell"><div className="sectionHead"><div><div className="eyebrow">Préparations à cuire</div><h2 className="technicalSectionTitle">MIXS COMPLETS POUR PREPARATION A CUIRE</h2></div></div><List items={cuire}/></div></section>
 <section className="section pale"><div className="shell"><div className="sectionHead"><div><div className="eyebrow">Charcuterie sèche</div><h2 className="technicalSectionTitle">MIXS COMPLETS POUR CHARCUTERIE SECHE</h2></div></div><List items={sec}/></div></section>
 <LegacyQuality/>
