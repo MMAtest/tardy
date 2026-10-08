@@ -102,7 +102,7 @@ html,body{max-width:100%;overflow-x:hidden}
 @media(max-width:650px){.processBand>div{grid-template-columns:1fr!important;gap:10px!important;padding:22px 0!important}.technicalSectionTitle{font-size:40px!important}}
 /* Quality control pictograms */
 .homeProductionFigures .qualityIcon{width:54px;height:54px;display:grid;place-items:center;color:var(--red-dark)}
-.homeProductionFigures .qualityIcon svg{width:48px;height:48px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.qualityIcon svg{width:48px;height:48px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 .homeProductionFigures>div{gap:22px}
 .homeProductionFigures>div>span:last-child{font-size:13px;line-height:1.45;color:var(--ink)}
 
