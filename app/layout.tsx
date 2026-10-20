@@ -2,6 +2,7 @@ import SiteHeader from "./components/SiteHeader";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./wordpress-parity.css";
+import "./home-recovery.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),
