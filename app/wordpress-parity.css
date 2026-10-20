@@ -135,7 +135,7 @@
   border-top: 1px solid #e7ded5; background: transparent; }
 .productDetail .spec small { display: block; font-size: 11px; font-weight: 700;
   text-transform: none; letter-spacing: 0; margin: 0; }
-.productDetail .spec b { font: 400 14px/1.65 inherit; font-family: inherit; color: #332c29; }
+.productDetail .spec b { font-family: inherit; font-size: 14px; font-weight: 500; line-height: 1.65; color: #332c29; }
 .productMapNav { padding-top: 16px !important; padding-bottom: 34px !important; }
 .productMapNav .animalMapReal { max-width: 650px; margin: auto; min-height: 280px; }
 .sourceProductList .sourceProduct { border-radius: 0; background: #fffdfa; }
