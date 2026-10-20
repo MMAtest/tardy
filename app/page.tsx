@@ -1,8 +1,7 @@
-import HomeMotion from "./components/HomeMotion";
 export const metadata={alternates:{canonical:"/"}};
 
 export default function Home(){
-  return <main><HomeMotion/>
+  return <main className="tardyHomeRecovery">
     <section className="homeHero">
       <img className="homeHeroImage" src="/assets/home-original/hero.jpg" alt="Charcuteries artisanales utilisant des boyaux naturels"/>
       <div className="homeHeroShade"/>
@@ -10,10 +9,8 @@ export default function Home(){
         <div className="homeHeroCopy">
           <div className="eyebrow homeHeroEyebrow">Bienvenue sur notre site</div>
           <h1>Spécialiste<br/>du boyau naturel<br/><em>depuis 1894.</em></h1>
-          <p>La société Tardy accompagne les professionnels de la charcuterie avec plus d’un siècle de savoir-faire dans la sélection, la transformation et la commercialisation de boyaux naturels.</p>
           <div className="heroActions">
-            <a className="btn" href="/nos-produits/">Nos boyaux naturels →</a>
-            <a className="btn homeHeroGhost" href="/qui-sommes-nous/">En savoir plus</a>
+            <a className="btn" href="/nos-produits/">En savoir plus <span aria-hidden="true">→</span></a>
           </div>
         </div>
         <div className="homeSince" aria-label="Maison Tardy depuis 1894"><small>since</small><strong>1894</strong></div>
