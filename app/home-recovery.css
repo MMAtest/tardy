@@ -1,0 +1,394 @@
+/* Casing Tardy homepage recovery — strictly scoped to the homepage.
+   Restores a restrained composition after successive !important editorial
+   experiments without affecting the original product dropdown or catalogue. */
+
+.tardyHomeRecovery .homeHero,
+.tardyHomeRecovery .homeHeroInner {
+  min-height: 610px !important;
+}
+.tardyHomeRecovery .homeHero {
+  background: #241d19;
+}
+.tardyHomeRecovery .homeHeroImage {
+  object-position: center 45%;
+  transform: none !important;
+  animation: none !important;
+}
+.tardyHomeRecovery .homeHeroShade {
+  background: linear-gradient(90deg,
+    rgba(24,17,14,.76) 0%,rgba(24,17,14,.45) 51%,rgba(24,17,14,.06) 100%) !important;
+}
+.tardyHomeRecovery .homeHeroCopy {
+  max-width: 690px;
+  animation: none !important;
+}
+.tardyHomeRecovery .homeHeroCopy .eyebrow,
+.tardyHomeRecovery .homeHeroCopy h1,
+.tardyHomeRecovery .homeHeroCopy .heroActions,
+.tardyHomeRecovery .homeSince {
+  animation: none !important;
+}
+.tardyHomeRecovery .homeHeroCopy h1 {
+  font-size: clamp(49px,5.7vw,84px) !important;
+  font-weight: 400 !important;
+  letter-spacing: -.035em !important;
+  line-height: 1.02 !important;
+  margin: 18px 0 26px !important;
+  max-width: 680px !important;
+}
+.tardyHomeRecovery .homeHeroCopy h1 em {
+  color: #f4d6c8 !important;
+  font-weight: 400;
+}
+.tardyHomeRecovery .homeHeroCopy .heroActions {
+  margin-top: 24px !important;
+  gap: 12px !important;
+}
+.tardyHomeRecovery .homeHeroCopy .heroActions .btn {
+  min-height: 45px !important;
+  padding: 13px 21px !important;
+  border-radius: 0 !important;
+  background: #fff4ea !important;
+  color: #51232b !important;
+  border: 1px solid #fff4ea !important;
+  font-weight: 700;
+  line-height: 1.4;
+}
+.tardyHomeRecovery .homeHeroCopy .heroActions .btn:hover {
+  background: white !important;
+}
+.tardyHomeRecovery .homeSince {
+  opacity: .78;
+  margin-bottom: 58px !important;
+  padding-left: 16px !important;
+}
+.tardyHomeRecovery .homeSince strong {
+  font-size: 54px !important;
+}
+
+/* History : readable two-column composition without overlays/offscreen photos. */
+.tardyHomeRecovery .homeHistory {
+  overflow: visible !important;
+  padding-top: 74px !important;
+  padding-bottom: 74px !important;
+}
+.tardyHomeRecovery .homeHistoryGrid {
+  display: grid !important;
+  grid-template-columns: minmax(0,1fr) minmax(0,1fr) !important;
+  gap: clamp(30px,5vw,80px) !important;
+  align-items: center !important;
+}
+.tardyHomeRecovery .homeHistoryVisual {
+  min-height: 440px !important;
+  margin-right: 0 !important;
+}
+.tardyHomeRecovery .historyMain {
+  width: 82% !important;
+  height: 420px !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+  transform: none !important;
+}
+.tardyHomeRecovery .historyInset {
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 42% !important;
+  height: 185px !important;
+  border: 7px solid var(--paper) !important;
+  transform: none !important;
+}
+.tardyHomeRecovery .historyStamp {
+  right: 6% !important;
+  top: 14px !important;
+  font-size: 58px !important;
+  color: rgba(137,21,54,.27) !important;
+}
+.tardyHomeRecovery .homeHistoryCopy {
+  position: static !important;
+  background: transparent !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  max-width: 620px !important;
+}
+.tardyHomeRecovery .homeHistoryCopy::before {
+  display: none !important;
+}
+.tardyHomeRecovery .homeHistoryCopy h2 {
+  font-size: clamp(39px,4.5vw,62px) !important;
+  line-height: 1.05 !important;
+}
+.tardyHomeRecovery .homeHistoryCopy p {
+  font-size: 15px;
+  line-height: 1.76;
+}
+
+/* Quality: clear text/image pair and restrained image height. */
+.tardyHomeRecovery .homeQualityGrid {
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: clamp(32px,5vw,80px) !important;
+  align-items: center !important;
+}
+.tardyHomeRecovery .homeQualityGrid>div:first-child {
+  padding: 0 !important;
+}
+.tardyHomeRecovery .homeQualityGrid>div:first-child::after,
+.tardyHomeRecovery .homeQualityMedia::before {
+  display: none !important;
+}
+.tardyHomeRecovery .homeQuality h2 {
+  font-size: clamp(39px,4.4vw,62px) !important;
+  line-height: 1.04 !important;
+}
+.tardyHomeRecovery .homeQualityMedia {
+  height: 410px !important;
+  margin: 0 !important;
+}
+.tardyHomeRecovery .homeQualityMedia img {
+  filter: none !important;
+}
+.tardyHomeRecovery .homeQualityNote {
+  display: grid !important;
+  grid-template-columns: .95fr 1.05fr !important;
+  gap: 34px !important;
+  padding: 34px 0 0 !important;
+  margin: 48px 0 0 !important;
+}
+.tardyHomeRecovery .homeQualityNote::before {
+  display: none !important;
+}
+.tardyHomeRecovery .homeQualityNoteTitle {
+  grid-template-columns: 34px 1fr !important;
+  gap: 9px !important;
+}
+.tardyHomeRecovery .homeQualityNoteTitle h3 {
+  font-size: clamp(24px,2.5vw,35px) !important;
+  line-height: 1.12 !important;
+}
+.tardyHomeRecovery .homeQualityNoteText {
+  display: block !important;
+  border-left: 0 !important;
+  padding: 0 !important;
+}
+.tardyHomeRecovery .homeQualityNoteText p {
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* Avoid animated giant icon rail masking fabrication content. */
+.tardyHomeRecovery .homeProduction .sectionHead h2,
+.tardyHomeRecovery .homeProcess .sectionHead h2 {
+  font-size: clamp(37px,4.2vw,58px) !important;
+  line-height: 1.06 !important;
+}
+.tardyHomeRecovery .homeProductionBody {
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 48px !important;
+  align-items: start;
+}
+.tardyHomeRecovery .qualityControlRail {
+  display: grid !important;
+  grid-template-columns: repeat(2,minmax(0,1fr)) !important;
+  gap: 12px !important;
+  padding: 0 !important;
+}
+.tardyHomeRecovery .qualityControlRail::before,
+.tardyHomeRecovery .qualityControlRail>div::before,
+.tardyHomeRecovery .qualityControlRail>div::after {
+  display: none !important;
+}
+.tardyHomeRecovery .qualityControlRail>div {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  min-height: 155px !important;
+  padding: 17px 10px !important;
+  border: 1px solid var(--line) !important;
+  background: var(--paper) !important;
+  text-align: center !important;
+  gap: 12px !important;
+}
+.tardyHomeRecovery .qualityControlRail .qualityIcon {
+  width: 56px !important;
+  height: 56px !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+}
+.tardyHomeRecovery .qualityControlRail .qualityIcon svg {
+  width: 31px !important;
+  height: 31px !important;
+}
+.tardyHomeRecovery .qualityControlRail>div>span:last-child {
+  font-size: 12px !important;
+  line-height: 1.45 !important;
+}
+
+/* Process cards instead of staggered 3-column manifesto rows. */
+.tardyHomeRecovery .homeProcessTimeline {
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  gap: 16px !important;
+  border: 0 !important;
+  margin-top: 25px !important;
+}
+.tardyHomeRecovery .homeProcessTimeline article,
+.tardyHomeRecovery .homeProcessTimeline article:nth-child(2),
+.tardyHomeRecovery .homeProcessTimeline article:nth-child(3) {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 12px !important;
+  border: 1px solid var(--line) !important;
+  padding: 24px !important;
+  min-height: 200px !important;
+  margin: 0 !important;
+  transform: none !important;
+  background: var(--paper) !important;
+  text-align: left !important;
+}
+.tardyHomeRecovery .homeProcessTimeline article h3 {
+  font-size: clamp(23px,2.5vw,30px) !important;
+  line-height: 1.12 !important;
+  margin: 0 !important;
+}
+.tardyHomeRecovery .homeProcessTimeline article p {
+  margin: 0 !important;
+  line-height: 1.7 !important;
+}
+
+/* Standards: no giant offset columns or oversized logo rail. */
+.tardyHomeRecovery .homeCommitment {
+  overflow: visible !important;
+}
+.tardyHomeRecovery .homeCommitmentGrid {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: clamp(30px,5vw,75px) !important;
+  align-items: start !important;
+}
+.tardyHomeRecovery .homeCommitmentGrid>div:first-child,
+.tardyHomeRecovery .homeCommitmentGrid>div:last-child {
+  grid-column: auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.tardyHomeRecovery .homeCommitmentGrid>div:first-child::after,
+.tardyHomeRecovery .homePartners::before {
+  display: none !important;
+}
+.tardyHomeRecovery .homeCommitment h2 {
+  font-size: clamp(38px,4.5vw,63px) !important;
+  line-height: 1.05 !important;
+}
+.tardyHomeRecovery .homeCommitmentGrid h3 {
+  font-size: 27px !important;
+  margin-top: 24px !important;
+}
+.tardyHomeRecovery .homePartners {
+  display: grid !important;
+  grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+  width: 100% !important;
+  margin: 36px 0 0 !important;
+  gap: 10px !important;
+  padding: 0 !important;
+  border: 0 !important;
+}
+.tardyHomeRecovery .homePartners>div,
+.tardyHomeRecovery .homePartners>div:nth-child(2),
+.tardyHomeRecovery .homePartners>div:nth-child(3) {
+  justify-content: center !important;
+  min-height: 140px !important;
+}
+.tardyHomeRecovery .homePartners img {
+  max-width: 175px !important;
+  max-height: 86px !important;
+}
+
+/* Last call-to-action should not dominate the rest of the page. */
+.tardyHomeRecovery .homeNewsletterEditorial {
+  min-height: 340px !important;
+  grid-template-columns: .85fr 1.15fr !important;
+}
+.tardyHomeRecovery .homeNewsletterEditorialImage {
+  min-height: 340px !important;
+}
+.tardyHomeRecovery .homeNewsletterEditorialContent {
+  padding: 44px clamp(24px,5vw,72px) !important;
+}
+.tardyHomeRecovery .homeNewsletterEditorialContent h2 {
+  font-size: clamp(32px,4vw,55px) !important;
+  line-height: 1.08 !important;
+  margin-bottom: 24px !important;
+}
+.tardyHomeRecovery .homeNewsletterEditorialYear {
+  font-size: 110px !important;
+}
+
+@media(max-width:980px) {
+  .tardyHomeRecovery .homeHistoryGrid,
+  .tardyHomeRecovery .homeQualityGrid,
+  .tardyHomeRecovery .homeProductionBody,
+  .tardyHomeRecovery .homeCommitmentGrid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+  }
+  .tardyHomeRecovery .homeHistoryVisual { max-width: 760px; }
+  .tardyHomeRecovery .homeHistoryCopy { max-width: 760px !important; }
+  .tardyHomeRecovery .homeQualityMedia { height: 380px !important; }
+  .tardyHomeRecovery .homeQualityNote { grid-template-columns: 1fr !important; }
+  .tardyHomeRecovery .homeProcessTimeline { grid-template-columns: 1fr !important; }
+}
+@media(max-width:650px) {
+  .tardyHomeRecovery .homeHero,
+  .tardyHomeRecovery .homeHeroInner { min-height: 505px !important; }
+  .tardyHomeRecovery .homeHeroImage { object-position: 57% center; }
+  .tardyHomeRecovery .homeHeroShade { background: linear-gradient(90deg,
+    rgba(24,17,14,.82),rgba(24,17,14,.32)) !important; }
+  .tardyHomeRecovery .homeHeroCopy h1 {
+    font-size: clamp(39px,10vw,58px) !important;
+    line-height: 1.04 !important;
+    letter-spacing: -.03em !important;
+  }
+  .tardyHomeRecovery .homeSince { display: none !important; }
+  .tardyHomeRecovery .homeHistory { padding: 46px 0 !important; }
+  .tardyHomeRecovery .homeHistoryVisual { min-height: 305px !important; }
+  .tardyHomeRecovery .historyMain { width: 84% !important; height: 285px !important; }
+  .tardyHomeRecovery .historyInset { height: 130px !important; width: 40% !important; border-width: 5px !important; }
+  .tardyHomeRecovery .historyStamp { font-size: 45px !important; }
+  .tardyHomeRecovery .homeHistoryCopy { padding: 0 !important; }
+  .tardyHomeRecovery .homeQuality h2,
+  .tardyHomeRecovery .homeCommitment h2,
+  .tardyHomeRecovery .homeProduction .sectionHead h2 {
+    font-size: clamp(34px,8.8vw,47px) !important;
+    line-height: 1.08 !important;
+  }
+  .tardyHomeRecovery .homeQualityMedia { height: 260px !important; }
+  .tardyHomeRecovery .homeQualityNote { padding-top: 22px !important; margin-top: 30px !important; }
+  .tardyHomeRecovery .qualityControlRail { grid-template-columns: 1fr 1fr !important; }
+  .tardyHomeRecovery .qualityControlRail>div { min-height: 128px !important; }
+  .tardyHomeRecovery .homeProcessTimeline article,
+  .tardyHomeRecovery .homeProcessTimeline article:nth-child(2),
+  .tardyHomeRecovery .homeProcessTimeline article:nth-child(3) {
+    padding: 19px !important;
+    min-height: 0 !important;
+  }
+  .tardyHomeRecovery .homePartners {
+    grid-template-columns: repeat(3,minmax(0,1fr)) !important;
+    gap: 5px !important;
+  }
+  .tardyHomeRecovery .homePartners>div { min-height: 94px !important; padding: 11px !important; }
+  .tardyHomeRecovery .homePartners img { max-width: 100% !important; max-height: 65px !important; }
+  .tardyHomeRecovery .homeNewsletterEditorial { grid-template-columns: 1fr !important; }
+  .tardyHomeRecovery .homeNewsletterEditorialImage { min-height: 160px !important; height: 160px !important; }
+  .tardyHomeRecovery .homeNewsletterEditorialContent { padding: 35px 7vw 42px !important; }
+  .tardyHomeRecovery .homeNewsletterEditorialContent h2 { font-size: 37px !important; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .tardyHomeRecovery *,
+  .tardyHomeRecovery *::before,
+  .tardyHomeRecovery *::after {
+    animation: none !important;
+    transition-duration: .01ms !important;
+  }
+}
