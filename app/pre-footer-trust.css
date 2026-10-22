@@ -1,0 +1,200 @@
+/* Two global Casing Tardy bands immediately before the shared footer.
+   Deliberately independent from homepage .homeProcess/.homeCommitment overrides.
+   Visual reference: casing-tardy.com, process icons + burgundy standards block. */
+
+.tardyTrustBands {
+  --trust-green: #00613c;
+  --trust-burgundy: #7b0030;
+  --trust-muted: #787878;
+  color: #181818;
+  background: #fff;
+  isolation: isolate;
+}
+.tardyTrustBands *,
+.tardyTrustBands *::before,
+.tardyTrustBands *::after { box-sizing: border-box; }
+.tardyTrustInner {
+  width: min(1160px, calc(100% - 64px));
+  margin-inline: auto;
+}
+.tardyTrustProcess {
+  position: relative;
+  background: #fff;
+  padding: 74px 0 80px;
+  text-align: center;
+}
+.tardyTrustEyebrow {
+  margin: 0 0 25px;
+  color: #aa264f;
+  font-size: 11px;
+  font-weight: 650;
+  letter-spacing: .18em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+.tardyTrustProcess h2 {
+  max-width: 1040px;
+  margin: 0 auto 60px;
+  color: var(--trust-green);
+  font: 500 clamp(32px, 4vw, 50px)/1.13 Georgia, "Times New Roman", serif;
+  letter-spacing: -.028em;
+  text-wrap: balance;
+}
+.tardyTrustSteps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(20px, 3.3vw, 48px);
+  align-items: start;
+}
+.tardyTrustStep {
+  min-width: 0;
+  text-align: center;
+  padding: 0 4px;
+  background: transparent;
+  border: 0;
+}
+.tardyTrustIcon {
+  display: grid;
+  width: 76px;
+  height: 76px;
+  place-items: center;
+  margin: 0 auto 21px;
+  border: 2px solid #84919e;
+  border-radius: 50%;
+  color: #778695;
+}
+.tardyTrustIcon svg {
+  width: 54px;
+  height: 54px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2.1px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.tardyTrustStep h3 {
+  margin: 0 auto 13px;
+  max-width: 360px;
+  color: #151515;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -.018em;
+}
+.tardyTrustStep p {
+  margin: 0;
+  color: var(--trust-muted);
+  font-size: clamp(14px, 1.45vw, 17px);
+  line-height: 1.65;
+}
+.tardyTrustStep p span { display: block; }
+
+/* Quiet patterned separator between light and wine-colored bands. */
+.tardyTrustProcess::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 32px;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 0,
+      transparent 0 7px,
+      rgba(120, 129, 122, .055) 8px 9px,
+      transparent 10px 21px
+    ),
+    #fbfaf8;
+}
+.tardyTrustStandards {
+  margin-top: 32px;
+  background: var(--trust-burgundy);
+  color: #fff;
+  padding: 62px 0 72px;
+  text-align: center;
+}
+.tardyTrustStandards h2 {
+  margin: 0 auto 29px;
+  max-width: 1120px;
+  color: #fff;
+  font: 500 clamp(33px, 4.15vw, 51px)/1.13 Georgia, "Times New Roman", serif;
+  letter-spacing: -.026em;
+  text-wrap: balance;
+}
+.tardyTrustLead {
+  max-width: 700px;
+  margin: 0 auto 32px;
+  font-size: clamp(15px, 1.5vw, 18px);
+  font-weight: 550;
+  line-height: 1.62;
+}
+.tardyTrustLogos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 34px;
+  margin: 22px auto 28px;
+  max-width: 970px;
+}
+.tardyTrustLogo {
+  display: grid;
+  place-items: center;
+  min-height: 122px;
+  padding: 10px;
+  background: transparent;
+  border: 0;
+}
+.tardyTrustLogo img {
+  display: block;
+  width: min(100%, 205px);
+  max-height: 119px;
+  height: auto;
+  object-fit: contain;
+}
+.tardyTrustStandards h3 {
+  margin: 0 auto 13px;
+  color: #fff;
+  font-size: 19px;
+  line-height: 1.3;
+  font-weight: 750;
+}
+.tardyTrustStandardsCopy {
+  max-width: 980px;
+  margin: 0 auto;
+  color: #fff;
+  font-size: clamp(13px, 1.4vw, 16px);
+  font-weight: 560;
+  line-height: 1.7;
+}
+@media (max-width: 760px) {
+  .tardyTrustInner { width: min(100% - 36px, 580px); }
+  .tardyTrustProcess { padding: 50px 0 54px; }
+  .tardyTrustEyebrow { font-size: 10px; letter-spacing: .12em; margin-bottom: 16px; }
+  .tardyTrustProcess h2 { font-size: clamp(29px, 7vw, 39px); margin-bottom: 39px; }
+  .tardyTrustSteps { grid-template-columns: 1fr; gap: 33px; }
+  .tardyTrustStep { max-width: 510px; margin: auto; }
+  .tardyTrustIcon { width: 66px; height: 66px; margin-bottom: 13px; }
+  .tardyTrustIcon svg { width: 46px; height: 46px; }
+  .tardyTrustStep h3 { font-size: 20px; margin-bottom: 9px; }
+  .tardyTrustStep p { font-size: 15px; }
+  .tardyTrustStandards { padding: 48px 0 56px; }
+  .tardyTrustStandards h2 { font-size: clamp(30px, 7.5vw, 39px); }
+  .tardyTrustLead { font-size: 15px; }
+  .tardyTrustLogos { gap: 11px; }
+  .tardyTrustLogo { min-height: 90px; padding: 0 3px; }
+  .tardyTrustLogo img { max-height: 77px; }
+  .tardyTrustStandardsCopy { font-size: 14px; }
+}
+@media (max-width: 400px) {
+  .tardyTrustInner { width: calc(100% - 28px); }
+  .tardyTrustLogos { gap: 6px; }
+  .tardyTrustLogo img { max-height: 63px; }
+  .tardyTrustStandards h2 { font-size: 28px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tardyTrustBands *,
+  .tardyTrustBands *::before,
+  .tardyTrustBands *::after { animation: none !important; transition: none !important; }
+}
