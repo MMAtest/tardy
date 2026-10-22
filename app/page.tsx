@@ -90,14 +90,6 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="homeNewsletterEditorial">
-      <div className="homeNewsletterEditorialImage"><img src="/assets/home-original/hero.jpg" alt="" aria-hidden="true"/></div>
-      <div className="homeNewsletterEditorialContent">
-        <div className="eyebrow">Maison Tardy</div>
-        <h2>Inscrivez-vous à notre newsletter<br/>pour recevoir nouvelles & promotions</h2>
-        <a className="newsletterTextLink" href="mailto:commercial@casing-tardy.com?subject=Inscription%20newsletter%20Tardy"><span>Souscrire</span><i>↗</i></a>
-      </div>
-      <div className="homeNewsletterEditorialYear" aria-hidden="true">1894</div>
-    </section>
+
   </main>
 }
