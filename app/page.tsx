@@ -90,56 +90,6 @@ export default function Home(){
       </div>
     </section>
 
-    <section className="section pale homeProcess">
-      <div className="shell">
-        <div className="sectionHead">
-          <div>
-            <div className="eyebrow">Un processus complet pour la préparation de vos commandes</div>
-            <h2>La qualité et l’innovation pour un service client optimal</h2>
-          </div>
-          <p>De la sélection des matières premières à la livraison, Tardy maîtrise chaque étape pour assurer régularité, sécurité et qualité de service.</p>
-        </div>
-        <div className="homeProcessTimeline">
-          <article>
-            <span className="processIndex">01</span>
-            <h3>Sélection des meilleures provenances</h3>
-            <p>Expertise et savoir-faire centenaire.<br/>Sourcing maîtrisé.<br/>Produits standardisés.</p>
-          </article>
-          <article>
-            <span className="processIndex">02</span>
-            <h3>Hygiène et sécurité</h3>
-            <p>Traçabilité garantie.<br/>Contrôles qualité et analyses bactériologiques.<br/>Food défense.</p>
-          </article>
-          <article>
-            <span className="processIndex">03</span>
-            <h3>Service de livraison</h3>
-            <p>Livraison dans toute la France de 24h à 48h.<br/>Transport par la STEF.<br/>Transport frigorifique.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section className="section homeCommitment">
-      <div className="shell">
-        <div className="homeCommitmentGrid">
-          <div>
-            <div className="eyebrow">Notre engagement</div>
-            <h2>Contribuer aux développements d’une charcuterie de qualité</h2>
-          </div>
-          <div>
-            <p>En apportant le meilleur soin à toute notre gamme de boyaux naturels, nous espérons contribuer activement à la qualité des produits de charcuterie et à la valorisation du terroir.</p>
-            <h3>Respect des normes</h3>
-            <p>Étant membres de la chambre syndicale de la boyauderie française, de l’ENSCA (European Natural Sausage Casings Association) et de l’INSCA (International Natural Sausage Casing Association), nous nous assurons du respect des normes en permanence.</p>
-          </div>
-        </div>
-        <div className="homePartners">
-          <div><img src="/assets/home-original/sbf.png" alt="Chambre syndicale de la boyauderie française"/></div>
-          <div><img src="/assets/home-original/ensca.png" alt="ENSCA"/></div>
-          <div><img src="/assets/home-original/insca.png" alt="INSCA"/></div>
-        </div>
-      </div>
-    </section>
-
     <section className="homeNewsletterEditorial">
       <div className="homeNewsletterEditorialImage"><img src="/assets/home-original/hero.jpg" alt="" aria-hidden="true"/></div>
       <div className="homeNewsletterEditorialContent">

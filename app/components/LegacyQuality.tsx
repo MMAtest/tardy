@@ -1,1 +1,19 @@
-export default function LegacyQuality(){return <section className="section compact"><div className="shell"><div className="sectionHead"><div><div className="eyebrow">Un processus complet</div><h2>La qualité et l’innovation pour un service client optimal.</h2></div><p>Sourcing, hygiène, traçabilité et livraison font partie intégrante du service Tardy.</p></div><div className="processBand"><div><h3>Sélection des meilleures provenances</h3><p>Expertise et savoir-faire centenaire.<br/>Sourcing maîtrisé.<br/>Produits standardisés.</p></div><div><h3>Hygiène et sécurité</h3><p>Traçabilité garantie.<br/>Contrôles qualité et analyses bactériologiques.<br/>Food défense.</p></div><div><h3>Service de livraison</h3><p>Livraison dans toute la France de 24h à 48h.<br/>Transport par la STEF.<br/>Transport frigorifique.</p></div><div><h3>À votre service depuis 1894</h3><p>Nous sommes à votre disposition pour répondre à vos besoins en boyaux naturels.</p><a className="btn" href="/contactez-nous/">Contactez-nous →</a></div></div></div></section>}
+/**
+ * Legacy product-page call to action, without duplicating the now-global
+ * sourcing / hygiene / logistics block rendered before the shared footer.
+ */
+export default function LegacyQuality() {
+  return (
+    <aside className="section compact" aria-label="Conseil sur les boyaux naturels">
+      <div className="shell">
+        <div className="sectionHead">
+          <div>
+            <div className="eyebrow">Un conseil pour votre fabrication ?</div>
+            <h2>Notre équipe est à votre écoute.</h2>
+          </div>
+          <a className="btn" href="/contactez-nous/">Contactez-nous →</a>
+        </div>
+      </div>
+    </aside>
+  );
+}
