@@ -1,3 +1,5 @@
+import DesktopNavigation from "./DesktopNavigation";
+
 /**
  * Navigation Casing Tardy : restaurée depuis la version antérieure au menu
  * éditorial plein écran (hiérarchie du commit bfb0f27^).
@@ -12,46 +14,7 @@ export default function SiteHeader() {
       <a className="logo" href="/" aria-label="Casing Tardy - Accueil">
         <img src="/assets/logo-tardy.png" alt="Tardy Boyaux Casings" />
       </a>
-      <nav className="desktopNav" aria-label="Navigation principale">
-        <div className="megaWrap">
-          <a className="navTrigger" href="/nos-produits/" aria-haspopup="true">Boyaux naturels <span aria-hidden="true">⌄</span></a>
-          <div className="mega megaProducts megaBoyaux">
-            <div className="megaColumn">
-              <a className="megaHeading" href="/nos-produits/boyaux-de-porc/">Porc & truie</a>
-              <a href="/nos-produits/boyaux-de-porc/menu-de-porc/">Menu de porc</a>
-              <a href="/nos-produits/boyaux-de-porc/menu-de-truie/">Menu de truie</a>
-              <a href="/nos-produits/boyaux-de-porc/chaudin-de-porc/">Chaudin de porc</a>
-              <a href="/nos-produits/boyaux-de-porc/sacs-de-porc/">Sacs de porc</a>
-              <a href="/nos-produits/boyaux-de-porc/suivant-de-porc/">Suivant de porc</a>
-              <a href="/nos-produits/boyaux-de-porc/suivant-de-truie/">Suivant de truie</a>
-              <a href="/nos-produits/boyaux-de-porc/rosettes-de-porc/">Rosettes de porc</a>
-            </div>
-            <div className="megaColumn">
-              <a className="megaHeading" href="/nos-produits/boyaux-de-mouton/">Mouton</a>
-              <a href="/nos-produits/boyaux-de-mouton/menu-de-mouton/">Menus de mouton</a>
-              <a className="megaHeading second" href="/nos-produits/boyaux-manufactures/">Boyaux manufacturés</a>
-            </div>
-            <div className="megaColumn">
-              <a className="megaHeading" href="/nos-produits/boyaux-de-boeuf/">Bœuf</a>
-              <a href="/nos-produits/boyaux-de-boeuf/menu-de-boeuf/">Menu de bœuf</a>
-              <a href="/nos-produits/boyaux-de-boeuf/gros-de-boeuf/">Gros de bœuf</a>
-              <a href="/nos-produits/boyaux-de-boeuf/baudruche-de-boeuf/">Baudruche de bœuf</a>
-              <a href="/nos-produits/">Tous les boyaux →</a>
-            </div>
-          </div>
-        </div>
-        <div className="megaWrap">
-          <a className="navTrigger" href="/epices-epicenou/" aria-haspopup="true">Épices <span aria-hidden="true">⌄</span></a>
-          <div className="mega">
-            <a href="/les-mixs-complets/"><b>Les mixs complets</b><span>Préparations à cuire et charcuterie sèche</span></a>
-            <a href="/epices-naturelles/"><b>Épices naturelles</b><span>Épices en sacs de 1 kg</span></a>
-            <a href="/les-chapelures/"><b>Les chapelures</b><span>Panades et chapelures</span></a>
-          </div>
-        </div>
-        <a href="/nos-produits/marinades/">Marinades</a>
-        <a href="/nos-produits/emballages-sacs/">Emballages</a>
-        <a href="/qui-sommes-nous/">Qui sommes-nous ?</a>
-      </nav>
+      <DesktopNavigation />
       <div className="headerActions">
         <a className="headerCta" href="/contactez-nous/">Contact ↗</a>
         <details className="mobileMenu">
