@@ -167,3 +167,30 @@
     bottom: -12px;
   }
 }
+
+/* Inner pages: present the newsletter invitation first, then the photo of
+   charcuterie below it. Keep the homepage's original image-left layout.
+   In Next's root layout the page <main> precedes this shared section. */
+main:not(.tardyHomeRecovery) ~ .tardyGlobalNewsletter.homeNewsletterEditorial {
+  grid-template-columns: minmax(0, 1fr) !important;
+}
+main:not(.tardyHomeRecovery) ~ .tardyGlobalNewsletter .homeNewsletterEditorialContent {
+  grid-row: 1;
+  grid-column: 1;
+  min-height: 245px;
+}
+main:not(.tardyHomeRecovery) ~ .tardyGlobalNewsletter .homeNewsletterEditorialImage {
+  grid-row: 2;
+  grid-column: 1;
+  min-height: 0;
+  height: clamp(200px, 24vw, 300px);
+}
+@media (max-width: 800px) {
+  main:not(.tardyHomeRecovery) ~ .tardyGlobalNewsletter .homeNewsletterEditorialContent {
+    min-height: 0;
+  }
+  main:not(.tardyHomeRecovery) ~ .tardyGlobalNewsletter .homeNewsletterEditorialImage {
+    height: 185px;
+    min-height: 185px;
+  }
+}

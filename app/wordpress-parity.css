@@ -191,3 +191,10 @@
 @media(prefers-reduced-motion: reduce) {
   .legacyCategoryCard, .legacyAnatomy>summary span { transition: none; }
 }
+
+/* The main natural-casings intro is text-only: the pig diagram remains
+   available below in the optional interactive anatomy section. */
+.legacyNaturalIntro.legacyNaturalIntroTextOnly {
+  display: block;
+  max-width: 860px;
+}
