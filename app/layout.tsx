@@ -1,10 +1,12 @@
 import SiteHeader from "./components/SiteHeader";
 import PreFooterTrust from "./components/PreFooterTrust";
+import FooterNewsletter from "./components/FooterNewsletter";
 import type { Metadata } from "next";
 import "./globals.css";
 import "./wordpress-parity.css";
 import "./home-recovery.css";
 import "./pre-footer-trust.css";
+import "./footer-and-hero.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),
@@ -15,7 +17,7 @@ export const metadata: Metadata = {
 };
 export default function RootLayout({children}:{children:React.ReactNode}) {
   const jsonLd={"@context":"https://schema.org","@type":"Organization","name":"Casing Tardy","url":"https://casing-tardy.com","foundingDate":"1894","telephone":"+33 4 91 08 10 59","email":"commercial@casing-tardy.com","address":{"@type":"PostalAddress","streetAddress":"27 traverse Antoine Donaz","postalCode":"13015","addressLocality":"Marseille","addressCountry":"FR"},"areaServed":"FR","description":"Fournisseur professionnel de boyaux naturels, épices, marinades et emballages pour la charcuterie."};
-  return <html lang="fr"><body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/><Topbar/><SiteHeader/>{children}<PreFooterTrust/><Footer/></body></html>
+  return <html lang="fr"><body><script type="application/ld+json" dangerouslySetInnerHTML={{__html:JSON.stringify(jsonLd)}}/><Topbar/><SiteHeader/>{children}<PreFooterTrust/><FooterNewsletter/><Footer/></body></html>
 }
 function Topbar(){return <div className="topbar"><div className="shell"><span>Maison fondée en 1894 · Marseille</span><a href="tel:+33491081059">+33 4 91 08 10 59</a></div></div>}
 function Footer(){return <footer className="siteFooter"><div className="shell">
