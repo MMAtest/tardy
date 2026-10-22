@@ -19,14 +19,13 @@ export default function Page() {
     <section className="pageHero legacyCategoryHero">
       <div className="shell">
         <div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><span>Boyaux naturels</span></div>
-        <div className="legacyNaturalIntro">
+        <div className="legacyNaturalIntro legacyNaturalIntroTextOnly">
           <div>
             <div className="eyebrow">Notre métier depuis 1894</div>
             <h1>Nos boyaux naturels</h1>
             <p>La société Tardy vous propose une gamme complète de boyaux naturels calibrés en paquets et filets, mais aussi dans des présentations plus élaborées : boyaux montés sur tubes souples ou rigides.</p>
             <p>Nous proposons un large choix de conditionnements adaptés à vos niveaux de consommation et à vos habitudes.</p>
           </div>
-          <img src="/assets/Boyaux-de-Porc-et-de-Truie.png" alt="Repères anatomiques des boyaux de porc et de truie" />
         </div>
       </div>
     </section>
