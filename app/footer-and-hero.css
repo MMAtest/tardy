@@ -1,0 +1,169 @@
+/* Casing Tardy — original centered WordPress hero + shared newsletter placement.
+   Loaded after the historical CSS so earlier homepage overrides cannot
+   suppress the intentional entrance sequence. */
+
+/* Center the headline, eyebrow and CTA as on casing-tardy.com. */
+.tardyHomeRecovery .homeHero .homeHeroInner {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  position: relative;
+}
+.tardyHomeRecovery .homeHero .homeHeroCopy {
+  flex: 0 1 100%;
+  width: 100%;
+  max-width: min(1050px, 100%) !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+.tardyHomeRecovery .homeHero .homeHeroCopy .homeHeroEyebrow {
+  display: block;
+  width: 100%;
+  text-align: center;
+  transform-origin: center;
+  font-size: clamp(13px, 1.45vw, 19px);
+  letter-spacing: .13em;
+}
+.tardyHomeRecovery .homeHero .homeHeroCopy h1 {
+  width: 100%;
+  max-width: 100% !important;
+  text-align: center !important;
+  margin: 21px auto 26px !important;
+  font-size: clamp(48px, 6.5vw, 96px) !important;
+  line-height: 1.03 !important;
+  text-wrap: balance;
+}
+.tardyHomeRecovery .homeHero .homeHeroCopy .heroActions {
+  width: 100%;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 29px auto 0 !important;
+}
+.tardyHomeRecovery .homeHero .homeHeroShade {
+  background:
+    linear-gradient(90deg, rgba(19, 13, 12, .34), rgba(19, 13, 12, .52) 35%, rgba(19, 13, 12, .52) 65%, rgba(19, 13, 12, .34)),
+    linear-gradient(180deg, rgba(18, 12, 11, .08), rgba(18, 12, 11, .17)) !important;
+}
+.tardyHomeRecovery .homeHero .homeSince {
+  position: absolute;
+  right: clamp(12px, 3vw, 42px);
+  bottom: 24px;
+  margin: 0 !important;
+  padding-left: 12px !important;
+  opacity: .52 !important;
+  pointer-events: none;
+}
+
+/* Faithful animation *types* from original Elementor settings:
+   rotateIn (intro), bounceInRight (headline), bounceInLeft (CTA).
+   CSS only, no JS race/hide-until-hydrated: animations settle naturally. */
+@keyframes tardyOriginalRotateIn {
+  from { opacity: 0; transform: rotate(-85deg) scale(.76); }
+  67% { opacity: 1; transform: rotate(7deg) scale(1.025); }
+  to { opacity: 1; transform: rotate(0deg) scale(1); }
+}
+@keyframes tardyOriginalBounceInRight {
+  0% { opacity: 0; transform: translate3d(95px, 0, 0); }
+  58% { opacity: 1; transform: translate3d(-12px, 0, 0); }
+  79% { transform: translate3d(4px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes tardyOriginalBounceInLeft {
+  0% { opacity: 0; transform: translate3d(-85px, 0, 0); }
+  60% { opacity: 1; transform: translate3d(9px, 0, 0); }
+  83% { transform: translate3d(-3px, 0, 0); }
+  100% { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .tardyHomeRecovery .homeHero .homeHeroCopy .homeHeroEyebrow {
+    animation: tardyOriginalRotateIn 680ms ease-out 100ms both !important;
+  }
+  .tardyHomeRecovery .homeHero .homeHeroCopy h1 {
+    animation: tardyOriginalBounceInRight 1050ms cubic-bezier(.23, .74, .24, 1) 280ms both !important;
+  }
+  .tardyHomeRecovery .homeHero .homeHeroCopy .heroActions {
+    animation: tardyOriginalBounceInLeft 900ms cubic-bezier(.23, .74, .24, 1) 580ms both !important;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .tardyHomeRecovery .homeHero .homeHeroCopy .homeHeroEyebrow,
+  .tardyHomeRecovery .homeHero .homeHeroCopy h1,
+  .tardyHomeRecovery .homeHero .homeHeroCopy .heroActions {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+@media (max-width: 650px) {
+  .tardyHomeRecovery .homeHero .homeHeroCopy {
+    width: 100% !important;
+    padding: 0 4px;
+  }
+  .tardyHomeRecovery .homeHero .homeHeroCopy h1 {
+    font-size: clamp(39px, 10vw, 60px) !important;
+    letter-spacing: -.035em !important;
+    line-height: 1.07 !important;
+    max-width: 100% !important;
+    margin: 20px auto 23px !important;
+  }
+  .tardyHomeRecovery .homeHero .homeHeroCopy .homeHeroEyebrow {
+    font-size: 12px;
+    letter-spacing: .09em;
+  }
+  .tardyHomeRecovery .homeHero .homeSince { display: none !important; }
+}
+
+/* Restore the existing newsletter *after* the site-wide process and standards
+   bands, on every route. Avoid inheriting home-only layout declarations. */
+.tardyGlobalNewsletter.homeNewsletterEditorial {
+  min-height: 355px;
+  grid-template-columns: minmax(0, .84fr) minmax(0, 1.16fr);
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  background: #891536;
+}
+.tardyGlobalNewsletter .homeNewsletterEditorialImage {
+  min-height: 355px;
+  height: 355px;
+}
+.tardyGlobalNewsletter .homeNewsletterEditorialImage img {
+  transform: none !important;
+  transition: none !important;
+  object-position: center;
+}
+.tardyGlobalNewsletter .homeNewsletterEditorialContent {
+  padding: 42px clamp(25px, 5vw, 85px);
+}
+.tardyGlobalNewsletter .homeNewsletterEditorialContent h2 {
+  font-size: clamp(31px, 3.8vw, 55px);
+  line-height: 1.05;
+  margin: 13px 0 26px;
+  max-width: 780px;
+}
+.tardyGlobalNewsletter .homeNewsletterEditorialYear {
+  font-size: clamp(100px, 14vw, 195px);
+  bottom: -27px;
+}
+@media (max-width: 800px) {
+  .tardyGlobalNewsletter.homeNewsletterEditorial {
+    display: grid;
+    grid-template-columns: 1fr !important;
+    min-height: 0;
+  }
+  .tardyGlobalNewsletter .homeNewsletterEditorialImage {
+    height: 185px;
+    min-height: 185px;
+  }
+  .tardyGlobalNewsletter .homeNewsletterEditorialContent {
+    padding: 32px 6vw 45px;
+  }
+  .tardyGlobalNewsletter .homeNewsletterEditorialContent h2 {
+    font-size: clamp(31px, 7vw, 44px);
+    line-height: 1.12;
+    margin: 12px 0 25px;
+  }
+  .tardyGlobalNewsletter .homeNewsletterEditorialYear {
+    font-size: 103px;
+    bottom: -12px;
+  }
+}
