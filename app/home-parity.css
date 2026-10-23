@@ -854,3 +854,36 @@ body:has(main.tardyHomeParity) { margin: 0; }
   .tardyHomeParity .parityQualityText h2,
   .tardyHomeParity .parityFabricationCard h2 { font-size: 33px; }
 }
+
+
+/* Final optical alignment from Chrome element bounds at 390/768/1024/1440px. */
+@media (max-width: 767px) {
+  /* Original WP: hygiene image top 1357px and fabrication image 2648px at 390px. */
+  .tardyHomeParity .parityQuality { padding-top: 54px; padding-bottom: 31px; }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) { margin-top: 23px; }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .tardyHomeParity .parityQualityText { min-height: 892px; }
+  /* Elementor has a much larger gap before the workshop panel on tablets. */
+  .tardyHomeParity .parityFabrication {
+    padding-top: clamp(176px, calc(468px - 26.56vw), 264px);
+  }
+}
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityHistory { padding-bottom: 105px; }
+  .tardyHomeParity .parityHistoryText > * {
+    position: relative;
+    top: -28px;
+  }
+  /* Match the 775px original left-hand card without the 88px overflow. */
+  .tardyHomeParity .parityQualityText {
+    padding-top: 23px;
+    padding-bottom: 40px;
+  }
+  .tardyHomeParity .parityQualityText > p:not(.parityEyebrow) {
+    margin-bottom: 8px;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    margin-top: 0;
+  }
+}
