@@ -887,3 +887,18 @@ body:has(main.tardyHomeParity) { margin: 0; }
     margin-top: 0;
   }
 }
+
+
+/* Final typographic baselines: keep the card geometry intact. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .tardyHomeParity .parityHistoryText > * {
+    position: relative;
+    top: calc(37.1vw - 327px);
+  }
+}
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityFabricationCard {
+    padding-top: 81px;
+    padding-bottom: 0;
+  }
+}
