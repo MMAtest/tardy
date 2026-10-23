@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Marcellus&display=swap");
+
 /*
  * Tardy homepage visual parity with casing-tardy.com (October 2026).
  * Deliberately scoped to <main class="tardyHomeParity">, so the already
@@ -490,5 +492,413 @@ body:has(main.tardyHomeParity) { margin: 0; }
   .tardyHomeParity *, .tardyHomeParity *::before, .tardyHomeParity *::after {
     animation: none !important;
     transition: none !important;
+  }
+}
+
+
+/* Measured against the live Elementor homepage on 23 October 2026.
+   These final refinements remain exclusively scoped to the homepage.
+   390px => stacked editorial cards; 768px => Elementor split panels;
+   1440px => fixed 793px hero, 36-40px Marcellus headlines. */
+.tardyHomeParity h1,
+.tardyHomeParity h2,
+.tardyHomeParity .parityYearMark strong {
+  font-family: "Marcellus", Georgia, "Times New Roman", serif;
+  letter-spacing: -.025em;
+}
+.tardyHomeParity .parityHistoryText > p:not(.parityEyebrow),
+.tardyHomeParity .parityQualityText > p:not(.parityEyebrow),
+.tardyHomeParity .parityFabricationCard > p:not(.parityEyebrow) {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #737373;
+}
+.tardyHomeParity .parityHistoryText h2,
+.tardyHomeParity .parityQualityText h2,
+.tardyHomeParity .parityFabricationCard h2 {
+  color: #00553e;
+}
+.tardyHomeParity .parityHero h1 {
+  font-size: clamp(44px, 5.1vw, 72px);
+  max-width: 960px;
+  line-height: 1.08;
+}
+
+/* WordPress has a fixed-height main banner on tablet/desktop. */
+@media (min-width: 768px) {
+  .tardyHomeParity .parityHero {
+    height: 793px;
+  }
+  .tardyHomeParity .parityHistoryText h2 {
+    font-size: 36px;
+    line-height: 1.11;
+  }
+  .tardyHomeParity .parityQualityText h2,
+  .tardyHomeParity .parityFabricationCard h2 {
+    font-size: 36px;
+    line-height: 1.12;
+  }
+  .tardyHomeParity .parityHistoryText > p:not(.parityEyebrow),
+  .tardyHomeParity .parityQualityText > p:not(.parityEyebrow),
+  .tardyHomeParity .parityFabricationCard > p:not(.parityEyebrow) {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+}
+
+/* Large desktop: original photo offsets and dimensions, measured at 1440px. */
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityHero { margin-top: 82px; }
+  .tardyHomeParity .parityHistory {
+    grid-template-columns: 43% 57%;
+    gap: 0;
+    padding-inline: clamp(50px, 5.2083vw, 100px);
+  }
+  .tardyHomeParity .parityHistoryText {
+    background: #fff;
+    padding: 40px clamp(50px, 7.325vw, 106px) 40px clamp(80px, 12.5vw, 180px);
+    align-self: stretch;
+    min-height: 660px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tardyHomeParity .parityHistoryText h2 {
+    font-size: 36px;
+  }
+  .tardyHomeParity .parityQuality {
+    grid-template-columns: 50.5% 49.5%;
+    gap: 0;
+    padding: 0 clamp(30px, 5.2083vw, 100px);
+  }
+  .tardyHomeParity .parityQualityText {
+    min-height: 775px;
+    padding: 50px 0 50px clamp(75px, 7.64vw, 110px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  .tardyHomeParity .parityQualityText h2 {
+    width: 330px;
+    max-width: 100%;
+    font-size: 40px;
+    line-height: 1.0;
+    margin-bottom: 20px;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    margin-top: 35px;
+    font-size: 36px;
+    line-height: 1.1;
+  }
+  .tardyHomeParity .parityQualityText > p:not(.parityEyebrow) {
+    max-width: 330px;
+    font-size: 15px;
+  }
+  .tardyHomeParity .parityPatternImage {
+    transform: translateX(-6px);
+  }
+  .tardyHomeParity .parityFabrication {
+    padding: 100px 0;
+  }
+  .tardyHomeParity .parityFabricationInner {
+    width: calc(100% - 60px);
+    max-width: 1600px;
+    min-height: 660px;
+    grid-template-columns: repeat(2, minmax(0,1fr));
+    align-items: start;
+  }
+  .tardyHomeParity .parityFabricationPhoto {
+    width: calc(100% - 12px);
+    height: auto;
+    aspect-ratio: 3 / 2;
+    margin-top: 104px;
+    object-fit: cover;
+    align-self: start;
+  }
+  .tardyHomeParity .parityFabricationCard {
+    width: calc(100% + 92px);
+    min-height: 660px;
+    margin-left: -92px;
+    padding: 40px clamp(52px, 7.32vw, 110px) 40px clamp(100px, 12.5vw, 180px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: start;
+  }
+  .tardyHomeParity .parityFabricationCard h2 {
+    font-size: 40px;
+    line-height: 1.09;
+  }
+}
+
+/* Intermediate widths match the WordPress two-column composition without
+   squeezing copy into narrow columns or forcing desktop-sized offsets. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .tardyHomeParity .parityHistory,
+  .tardyHomeParity .parityQuality {
+    padding-inline: 30px;
+    gap: 0;
+  }
+  .tardyHomeParity .parityHistory {
+    grid-template-columns: 43% 57%;
+    padding-block: 80px;
+  }
+  .tardyHomeParity .parityHistoryText {
+    background: #fff;
+    min-height: 660px;
+    padding: 40px 30px 40px clamp(45px, 8vw, 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tardyHomeParity .parityHistoryText h2 { font-size: 36px; }
+  .tardyHomeParity .parityQuality {
+    grid-template-columns: 55% 45%;
+    padding-block: 0;
+  }
+  .tardyHomeParity .parityQualityText {
+    min-height: 775px;
+    padding: 40px clamp(30px, 7.8vw, 80px) 40px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .tardyHomeParity .parityQualityText h2 {
+    font-size: 36px;
+    line-height: 1.02;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    font-size: 36px;
+  }
+  .tardyHomeParity .parityFabricationCard h2 { font-size: 36px; }
+}
+
+/* The source site switches from the two-column Elementor sections to
+   stacked, full-width photo + white editorial panel below 768px. */
+@media (max-width: 767px) {
+  .tardyHomeParity .parityHero {
+    margin-top: 44px;
+    height: clamp(394px, 101vw, 500px);
+    min-height: 394px;
+  }
+  .tardyHomeParity .parityHero h1 {
+    font-size: clamp(33px, 9.1vw, 46px);
+    line-height: 1.12;
+  }
+  .tardyHomeParity .parityHistory,
+  .tardyHomeParity .parityQuality {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding-inline: 0;
+    background-color: #fff;
+    background-size: 52px 42px;
+  }
+  .tardyHomeParity .parityHistory {
+    padding-block: 14px 0;
+  }
+  .tardyHomeParity .parityYearImage {
+    width: calc(100% - 30px);
+    aspect-ratio: 1.26;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    margin: 0 15px;
+    overflow: visible;
+  }
+  .tardyHomeParity .parityYearImage > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .tardyHomeParity .parityYearMark {
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 6px;
+  }
+  .tardyHomeParity .parityYearMark span {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  .tardyHomeParity .parityYearMark strong {
+    font-size: clamp(82px, 25vw, 124px);
+    line-height: .89;
+    letter-spacing: -.065em;
+  }
+  .tardyHomeParity .parityHistoryText {
+    width: calc(100% - 30px);
+    min-height: 492px;
+    margin: 0 15px;
+    padding: 60px 15px 80px;
+    display: block;
+    background: #fff;
+    text-align: center;
+  }
+  .tardyHomeParity .parityHistoryText .parityEyebrow,
+  .tardyHomeParity .parityQualityText .parityEyebrow,
+  .tardyHomeParity .parityFabricationCard .parityEyebrow {
+    text-align: center;
+    font-size: 11px;
+    line-height: 1.35;
+    margin-bottom: 14px;
+  }
+  .tardyHomeParity .parityHistoryText h2,
+  .tardyHomeParity .parityQualityText h2,
+  .tardyHomeParity .parityFabricationCard h2 {
+    font-size: 36px;
+    line-height: 1.02;
+    text-align: center;
+    letter-spacing: -.02em;
+  }
+  .tardyHomeParity .parityHistoryText h2 {
+    margin-bottom: 22px;
+  }
+  .tardyHomeParity .parityHistoryText > p:not(.parityEyebrow),
+  .tardyHomeParity .parityQualityText > p:not(.parityEyebrow),
+  .tardyHomeParity .parityFabricationCard > p:not(.parityEyebrow) {
+    font-size: 15px;
+    line-height: 1.62;
+    text-align: center;
+    margin: 0 0 22px;
+  }
+  .tardyHomeParity .parityQuality {
+    padding-block: 75px 80px;
+    gap: 15px;
+  }
+  .tardyHomeParity .parityPatternImage {
+    order: 0;
+    width: calc(100% - 60px);
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0;
+    aspect-ratio: 3 / 2;
+    background: #fff;
+    align-self: center;
+  }
+  .tardyHomeParity .parityPatternImage img {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+    object-fit: contain;
+  }
+  .tardyHomeParity .parityQualityText {
+    order: 1;
+    width: calc(100% - 30px);
+    min-height: 914px;
+    margin: 0 15px;
+    padding: 60px 15px 62px;
+    background: #fff;
+    text-align: center;
+  }
+  .tardyHomeParity .parityQualityText h2 {
+    max-width: 100%;
+    margin: 0 auto 25px;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    margin-top: 39px;
+    margin-bottom: 22px;
+  }
+  .tardyHomeParity .parityFabrication {
+    padding: 112px 0 90px;
+  }
+  .tardyHomeParity .parityFabricationInner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: 0;
+  }
+  .tardyHomeParity .parityFabricationPhoto {
+    width: min(calc(100% - 120px), 520px);
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 3 / 2;
+    margin: 0 auto 15px;
+    object-fit: cover;
+    align-self: center;
+  }
+  .tardyHomeParity .parityFabricationCard {
+    width: calc(100% - 90px);
+    min-height: 810px;
+    margin: 0 auto;
+    padding: 60px 15px;
+    display: block;
+    text-align: center;
+  }
+  .tardyHomeParity .parityFabricationCard h2 {
+    margin: 0 auto 24px;
+  }
+  .tardyHomeParity .parityFabricationButton {
+    display: flex;
+    width: min(100%, 240px);
+    min-width: 0;
+    margin: 22px auto 0;
+    font-size: 13px;
+  }
+}
+/* Very narrow screens should never lose text width to fixed gutter values. */
+@media (max-width: 359px) {
+  .tardyHomeParity .parityYearImage,
+  .tardyHomeParity .parityHistoryText,
+  .tardyHomeParity .parityQualityText { width: calc(100% - 20px); margin-inline: 10px; }
+  .tardyHomeParity .parityPatternImage { width: calc(100% - 40px); }
+  .tardyHomeParity .parityFabricationPhoto { width: calc(100% - 80px); }
+  .tardyHomeParity .parityFabricationCard { width: calc(100% - 50px); }
+  .tardyHomeParity .parityHistoryText h2,
+  .tardyHomeParity .parityQualityText h2,
+  .tardyHomeParity .parityFabricationCard h2 { font-size: 33px; }
+}
+
+
+/* Final optical alignment from Chrome element bounds at 390/768/1024/1440px. */
+@media (max-width: 767px) {
+  /* Original WP: hygiene image top 1357px and fabrication image 2648px at 390px. */
+  .tardyHomeParity .parityQuality { padding-top: 54px; padding-bottom: 31px; }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) { margin-top: 23px; }
+}
+@media (min-width: 768px) and (max-width: 1100px) {
+  .tardyHomeParity .parityQualityText { min-height: 892px; }
+  /* Elementor has a much larger gap before the workshop panel on tablets. */
+  .tardyHomeParity .parityFabrication {
+    padding-top: clamp(176px, calc(468px - 26.56vw), 264px);
+  }
+}
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityHistory { padding-bottom: 105px; }
+  .tardyHomeParity .parityHistoryText > * {
+    position: relative;
+    top: -28px;
+  }
+  /* Match the 775px original left-hand card without the 88px overflow. */
+  .tardyHomeParity .parityQualityText {
+    padding-top: 23px;
+    padding-bottom: 40px;
+  }
+  .tardyHomeParity .parityQualityText > p:not(.parityEyebrow) {
+    margin-bottom: 8px;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    margin-top: 0;
+  }
+}
+
+
+/* Final typographic baselines: keep the card geometry intact. */
+@media (min-width: 768px) and (max-width: 1100px) {
+  .tardyHomeParity .parityHistoryText > * {
+    position: relative;
+    top: calc(37.1vw - 327px);
+  }
+}
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityFabricationCard {
+    padding-top: 81px;
+    padding-bottom: 0;
   }
 }
