@@ -1,5 +1,3 @@
-import EpicenouBrand from "../components/EpicenouBrand";
-import LegacyQuality from "../components/LegacyQuality";
 const cuire=[
 ["Préparation merguez","paprika, piment fort, coriandre","Sans allergènes","Seau 10 kg"],
 ["Préparation saucisse chipolata","poivre","Sans allergènes","Seau 10 kg"],
@@ -40,12 +38,22 @@ const mixVisuals:Record<string,{src:string,illustrative?:boolean}>={
 "Mix complet saucisson sec":{src:"/assets/editorial-external/cured-sausage.webp",illustrative:true},
 "Liant Saucisson sec":{src:"/assets/editorial-external/spices-rustic.webp",illustrative:true}
 };
-function List({items,start=0}:{items:string[][],start?:number}){return <div className="catalogLines">{items.map(([n,c,a,p],i)=>{const visual=mixVisuals[n];return <article className="catalogLine catalogLineDetailed catalogLineWithMedia" key={n}><span className="catalogLineIndex">{String(start+i+1).padStart(2,"0")}</span><h3>{n}</h3><figure className="catalogInlineMedia"><img src={visual.src} alt={visual.illustrative?`${n}, illustration`:n}/>{visual.illustrative&&<figcaption>Illustration</figcaption>}</figure><div className="catalogLineData"><p>{n} : {c}</p><p>{a}</p><p>Emballage/Conditionnement : {p}</p></div></article>})}</div>}
+function List({items}:{items:string[][]}){return <div className="wpProductGallery wpMixGallery">{items.map(([name,composition,allergens,packing],i)=>{
+ const visual=mixVisuals[name];
+ return <article className="wpGalleryProduct" key={name}>
+  <figure><img src={visual.src} loading={i<2?"eager":"lazy"} alt={visual.illustrative?`${name}, illustration`:name}/></figure>
+  <h3>{name}</h3>
+  <div className="wpGalleryProductCopy"><p>{composition}</p><p>{allergens}</p><p><strong>Emballage/Conditionnement :</strong> {packing}</p></div>
+  {visual.illustrative&&<span className="wpIllustrationNote">Illustration</span>}
+ </article>})}</div>}
 export const metadata={title:"Les mixs complets",alternates:{canonical:"/les-mixs-complets/"}};
-export default function Page(){return <main>
-<section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/epices-epicenou/">Épices</a><span>·</span><span>Mixs complets</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Epicenou</div><h1>Les mixs complets</h1></div></div></div></section>
-<EpicenouBrand compact/>
-<section className="section"><div className="shell"><div className="sectionHead"><div><div className="eyebrow">Préparations à cuire</div><h2 className="technicalSectionTitle">MIXS COMPLETS POUR PREPARATION A CUIRE</h2></div></div><List items={cuire}/></div></section>
-<section className="section pale"><div className="shell"><div className="sectionHead"><div><div className="eyebrow">Charcuterie sèche</div><h2 className="technicalSectionTitle">MIXS COMPLETS POUR CHARCUTERIE SECHE</h2></div></div><List items={sec} start={cuire.length}/></div></section>
-<LegacyQuality/>
+export default function Page(){return <main className="wpRestored wpMixProducts">
+<section className="wpMixSection">
+ <h1>MIXS COMPLETS POUR PREPARATION A CUIRE</h1>
+ <List items={cuire}/>
+</section>
+<section className="wpMixSection">
+ <h2>MIXS COMPLETS POUR CHARCUTERIE SECHE</h2>
+ <List items={sec}/>
+</section>
 </main>}

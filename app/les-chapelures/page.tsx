@@ -1,15 +1,25 @@
-import EpicenouBrand from "../components/EpicenouBrand";
-import LegacyQuality from "../components/LegacyQuality";
-const refs=[
-["Chapelure","Panade de blé : farine de blé, levure, sel","/assets/products/transparent/chapelures/chapelure.webp",false],
-["Chapelure jaune","Panade de blé : farine de blé, levure, sel, épices","/assets/products/external/breadcrumbs.webp",true],
-["Chapelure dorée","Blé, seigle, orge","/assets/products/transparent/chapelures/chapelure-doree.webp",false],
-["Panade Toscane","Carotte, paprika, basilic","/assets/schnitzel-g9b1dff796_1920.jpg",true]
-] as const;
+/**
+ * Traditional Epicenou product copy/gallery matching the Wordpress source.
+ * Clean product cutouts remain available within the spice catalogue.
+ */
 export const metadata={title:"Les chapelures",alternates:{canonical:"/les-chapelures/"}};
-export default function Page(){return <main>
-<section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><a href="/epices-epicenou/">Épices</a><span>·</span><span>Chapelures</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Conditionnement : sac de 1 kg</div><h1>Les chapelures</h1></div></div></div></section>
-<EpicenouBrand compact/>
-<section className="section"><div className="shell chapelureProductIndex">{refs.map(([name,desc,image,illustrative],i)=><article className="chapelureProductRow" key={name}><span>{String(i+1).padStart(2,"0")}</span><figure><img src={image} alt={illustrative?`${name}, illustration`:name}/>{illustrative&&<figcaption>Illustration d’usage</figcaption>}</figure><div><h2>{name}</h2><p>{desc}</p><small>Emballage / Conditionnement : sac de 1 kg.</small></div></article>)}</div></section>
-<LegacyQuality/>
-</main>}
+const captions=[
+  {name:"Chapelure",detail:"Panade de blé (farine de blé, levure, sel)"},
+  {name:"Chapelure Jaune",detail:"Panade de blé (farine de blé, levure, sel, épices)"},
+  {name:"Chapelure Dorée",detail:"Chapelure : blé, seigle, orge"},
+  {name:"Panade Toscane",detail:"carotte, paprika, basilic"},
+];
+export default function Page(){
+ return <main className="wpRestored wpBreadcrumbsPage">
+  <section className="wpBreadcrumbsContent">
+    <h1 className="wpVisuallyHidden">Les chapelures</h1>
+    <p><strong>Emballage/Conditionnement :</strong> Sac de 1 kg</p>
+    {captions.map((c,i)=><p key={c.name}><strong>{c.name} :</strong> {c.detail}{i===1&&<> <span className="wpInlinePack">Emballage/Conditionnement : Sac de 1 kg</span></>}</p>)}
+    <div className="wpChapelureGallery" aria-label="Photos des chapelures">
+     <img src="/assets/wp-reference/images-1.jpeg" alt="Chapelure naturelle dans un récipient" loading="lazy"/>
+     <img src="/assets/wp-reference/images-2.jpeg" alt="Panades et chapelures dans un récipient" loading="lazy"/>
+     <img src="/assets/wp-reference/images-3.jpeg" alt="Chapelure traditionnelle" loading="lazy"/>
+    </div>
+  </section>
+ </main>;
+}

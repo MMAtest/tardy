@@ -1,10 +1,30 @@
-export const metadata={title:"Qui sommes-nous ?",description:"La société Tardy, spécialiste du boyau naturel depuis 1894.",alternates:{canonical:"/qui-sommes-nous/"}};
-export default function Page(){return <main>
-<section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><span>Qui sommes-nous ?</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Société Tardy</div><h1>Spécialiste du boyau naturel depuis 1894.</h1></div><p>Une maison marseillaise historique dont le métier est de sélectionner, transformer et commercialiser des boyaux naturels pour les professionnels.</p></div></div></section>
-<section className="section heritageNarrativeSection"><div className="shell heritageNarrative">
-<article className="heritageChapter"><figure><img src="/assets/Downloader.la-621786f021532.jpg" alt="Société Tardy"/></figure><div className="heritageChapterCopy"><div className="eyebrow">Présentation</div><h2>Plus d’un siècle de savoir-faire.</h2><p>La société Tardy, constituée en 1894, a pour vocation de sélectionner, transformer et commercialiser des boyaux naturels à destination de grossistes, charcutiers et salaisonniers.</p></div></article>
-<article className="heritageChapter"><figure><img src="/assets/home-original/histoire.webp" alt="Archive et histoire de la maison Tardy"/></figure><div className="heritageChapterCopy"><p>Notre expérience nous a permis d’acquérir un savoir-faire important quant au choix des boyaux ainsi qu’à leurs préparations et leurs conditionnements pour une qualité optimale.</p></div></article>
-<article className="heritageChapter heritageQuoteChapter"><figure><img src="/assets/home-original/fabrication.jpg" alt="Fabrication et savoir-faire Tardy"/></figure><div className="heritageChapterCopy"><blockquote>« En apportant le meilleur soin à toute notre gamme de boyaux naturels, nous espérons contribuer activement à la qualité des produits de charcuterie. »</blockquote><p><strong>M. Jean TARDY / Fondateur</strong></p></div></article>
-</div></section>
-<section className="section heritageQualityLedger"><div className="shell"><div className="heritageQualityRow"><span>01</span><h2>Meilleures provenances</h2><p>Matière origine de qualité<br/>Standardisation des produits</p></div><div className="heritageQualityRow"><span>02</span><h2>Service de Livraison</h2><p>Livraison dans toute la France de 24h à 48h<br/>Transport par la STEF</p></div><div className="heritageQualityRow"><span>03</span><h2>Traçabilité garantie</h2><p>Contrôle qualité et analyse bactériologique</p></div></div></section><section className="heritageContact"><div className="shell heritageContactInner"><span className="heritageContactYear" aria-hidden="true">1894</span><div><h2>À votre service depuis 1894.</h2></div><div className="heritageContactAside"><p>Nous sommes à votre disposition pour répondre à vos besoins en boyaux naturels.</p><a href="/contactez-nous/" className="heritageContactLink"><span>Contactez-nous</span><i>↗</i></a></div></div></section>
-</main>}
+/**
+ * Source-ordered history page: masthead, two archival photos, presentation,
+ * logo and the three expertise commitments.
+ */
+export const metadata={title:"Qui sommes-nous ?",alternates:{canonical:"/qui-sommes-nous/"}};
+export default function Page(){
+ return <main className="wpRestored wpCompany">
+   <section className="wpCompanyIntro">
+     <h1>Société Tardy</h1>
+     <p>Spécialiste du boyau naturel depuis 1894</p>
+     <div className="wpCompanyPhotos">
+       <img src="/assets/Downloader.la-621786f021532.jpg" alt="Charcuteries et boyaux naturels" loading="eager"/>
+       <img src="/assets/wp-reference/Downloader.la-621786469ecff.jpg" alt="Installation de production et de conditionnement" loading="lazy"/>
+     </div>
+   </section>
+   <section className="wpCompanyHistory">
+     <h2>Présentation</h2>
+     <p>La société Tardy, constituée en 1894, a pour vocation de sélectionner, transformer et commercialiser des boyaux naturels à destination de grossistes, charcutiers et salaisonniers.</p>
+     <p>Notre expérience nous a permis d’acquérir un savoir-faire important quant au choix des boyaux ainsi qu’à leurs préparations et leurs conditionnements pour une qualité optimale.</p>
+     <p>L’internationalisation des approvisionnements de boyaux de porc, bœuf et mouton nous a amenés à sélectionner les pays proposant les meilleures matières premières ainsi que les outils de transformation les plus appropriés pour garantir la qualité de nos produits.</p>
+     <img src="/assets/wp-reference/logoPlan-de-travail-1.png" alt="Le savoir-faire Casing Tardy" loading="lazy"/>
+   </section>
+   <section className="wpCompanyPromises" aria-label="Nos engagements">
+    <article><h3>Meilleures provenances</h3><p>Une sélection rigoureuse des matières premières et des produits standardisés.</p></article>
+    <article><h3>Service de Livraison</h3><p>Livraison dans toute la France de 24h à 48h et transport frigorifique.</p></article>
+    <article><h3>Traçabilité garantie</h3><p>Des contrôles qualité et des analyses bactériologiques régulières.</p></article>
+   </section>
+   <section className="wpCompanyHelp"><h2>À votre service depuis 1894</h2><p>Nous sommes à votre disposition pour répondre à vos besoins en boyaux naturels.</p><a href="/contactez-nous/">Contactez-nous</a></section>
+ </main>;
+}

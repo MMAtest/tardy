@@ -1,3 +1,20 @@
-import EpicenouBrand from "../components/EpicenouBrand";
-import LegacyQuality from "../components/LegacyQuality";
-export const metadata={title:"Épices Epicenou",alternates:{canonical:"/epices-epicenou/"}};export default function Page(){return <main><section className="pageHero"><div className="shell"><div className="breadcrumbs"><a href="/">Accueil</a><span>·</span><span>Épices Epicenou</span></div><div className="pageHeroGrid"><div><div className="eyebrow">Epicenou</div><h1>Épices Epicenou</h1></div><p>Les épices sont au cœur de vos préparations et permettent d’amuser nos papilles. Avec cette sélection d’épices de qualité vous pourrez assaisonner et donner un goût inimitable à vos préparations.</p></div><nav className="sectionIndexNav" aria-label="Explorer les épices"><a href="/les-mixs-complets/"><span>01</span><strong>Les mixs complets</strong><i>↗</i></a><a href="/epices-naturelles/"><span>02</span><strong>Épices naturelles</strong><i>↗</i></a><a href="/les-chapelures/"><span>03</span><strong>Les chapelures</strong><i>↗</i></a></nav></div></section><EpicenouBrand/><section className="section"><div className="shell epicenouUniverse"><a href="/les-mixs-complets/"><img src="/assets/products/transparent/mixs/indienne.webp" alt="Mix saucisse indienne"/><span>Les mixs complets</span></a><a href="/epices-naturelles/"><img src="/assets/epicenou/herbes-de-provence.webp" alt="Herbes de Provence"/><span>Épices naturelles</span></a><a href="/les-chapelures/"><img src="/assets/products/transparent/chapelures/chapelure.webp" alt="Chapelure"/><span>Les chapelures</span></a></div></section><LegacyQuality/></main>}
+/**
+ * Wordpress-faithful public spice landing page.
+ * The shared quality + standards + newsletter remain in RootLayout.
+ */
+export const metadata={title:"Épices Epicenou",alternates:{canonical:"/epices-epicenou/"}};
+const choices=[
+  {name:"Les mixs complets",href:"/les-mixs-complets/"},
+  {name:"Épices naturelles",href:"/epices-naturelles/"},
+  {name:"Les chapelures",href:"/les-chapelures/"}
+];
+export default function Page(){
+ return <main className="wpRestored wpSpicesLanding">
+   <section className="wpSpicesIntro" aria-label="Nos épices Epicenou">
+     <p>Les Epices sont au cœur de vos préparations et permettent d’amuser nos papilles. Avec cette sélection d’épices de qualités vous pourrez assaisonner et donner un goût inimitable à toutes les préparations que vous allez confectionner et cela pour le bonheur des plus gourmands.</p>
+     <nav className="wpSpiceChoices" aria-label="Catégories d'épices">
+       {choices.map(item=><a key={item.href} href={item.href}>{item.name}</a>)}
+     </nav>
+   </section>
+ </main>;
+}

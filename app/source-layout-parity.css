@@ -1,0 +1,320 @@
+/*
+ * Casing Tardy — public WordPress layout restoration, October 2026.
+ *
+ * Pages in .wpRestored follow the online reference for content order and
+ * editorial geometry; the global header / approved prefooter remain shared.
+ * Product category and detail templates are kept intact, with only safe
+ * background/header parity changes.
+ */
+:root { --wp-ink: #111; --wp-burgundy:#8d143e; }
+body { background: #fff; }
+/* The legacy original header has no narrow dark bar on either breakpoint. */
+body > .topbar { display: none !important; }
+.siteHeader {
+  background: #fff !important;
+  border-bottom: 1px solid #e8e8e8 !important;
+  -webkit-backdrop-filter: none !important;
+  backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+.siteHeader .headerInner { background: #fff; }
+.siteHeader .mobilePanel { background: #fff !important; }
+.siteHeader .mobileMenu > summary { background: #fff !important; }
+
+/* Subcategory content is traditionally white; keep the detailed tables and
+   the previously approved links intact while removing the beige page chrome. */
+main:not(.tardyHomeParity):not(.wpRestored) { background: #fff; }
+main:not(.tardyHomeParity):not(.wpRestored) .pageHero { background: #fff !important; }
+main:not(.tardyHomeParity):not(.wpRestored) .section.pale { background: #fff !important; }
+main:not(.tardyHomeParity):not(.wpRestored) .legacyCatalogSection { background:#fff !important; }
+main:not(.tardyHomeParity):not(.wpRestored) .technicalCatalog { background: #fff; }
+
+.wpRestored { background:#fff; color:var(--wp-ink); font-family:Arial,"Helvetica Neue",Helvetica,sans-serif; overflow:clip; }
+.wpRestored h1,.wpRestored h2,.wpRestored h3 { font-family:Arial,"Helvetica Neue",Helvetica,sans-serif; font-weight:750; letter-spacing:-.025em; }
+.wpRestored p { line-height:1.65; }
+.wpRestored a { text-decoration:none; }
+.wpRestored a:hover { color:var(--wp-burgundy); }
+.wpRestored a:focus-visible { outline:2px solid var(--wp-burgundy);outline-offset:4px; }
+.wpVisuallyHidden {position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
+
+/* Épices Epicenou: centered description and exactly three visible choices. */
+.wpSpicesIntro {
+  width:min(100% - 40px,1030px);
+  margin:0 auto;
+  padding:80px 0 78px;
+  text-align:center;
+}
+.wpSpicesIntro > p {
+  max-width:790px;
+  margin:0 auto 41px;
+  color:#555;
+  font-size:16px;
+  line-height:1.8;
+}
+.wpSpiceChoices {
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  align-items:center;gap:22px;
+}
+.wpSpiceChoices a {
+  display:block;
+  font-size:clamp(19px,1.85vw,28px);
+  font-weight:800;
+  color:#0a0a0a;
+  line-height:1.22;
+  padding:13px 3px;
+  transition:color .2s ease,transform .2s ease;
+}
+.wpSpiceChoices a:nth-child(2) { color:var(--wp-burgundy); }
+.wpSpiceChoices a:hover { color:var(--wp-burgundy); transform:translateY(-2px); }
+
+/* Nos boyaux naturels: centered source heading, paragraph, packaging strip,
+   then four categories as plain navigation links. */
+.wpNaturalBody {
+  width:min(100% - 44px,1120px);
+  padding:96px 0 95px;
+  margin:0 auto;
+  text-align:center;
+}
+.wpNaturalBody h1 {
+  margin:0 auto 31px;
+  font-size:clamp(32px,3.2vw,46px);
+  line-height:1.16;
+}
+.wpNaturalBody p { max-width:970px;margin:0 auto 39px;color:#666;font-size:16px; }
+.wpNaturalBody h2 { max-width:970px;margin:0 auto 28px;font-size:clamp(21px,2.1vw,28px);line-height:1.25; }
+.wpConditioningImage {
+  display:block;width:min(100%,945px);height:auto;margin:0 auto 24px;
+  object-fit:contain;background:transparent;
+}
+.wpNaturalLinks {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:15px 40px;max-width:930px;margin:0 auto;
+}
+.wpNaturalLinks a {
+  display:block;color:#000;font-size:clamp(21px,2vw,27px);font-weight:800;
+  padding:16px 8px;transition:color .2s ease, transform .2s ease;
+}
+.wpNaturalLinks a:hover {transform:translateY(-2px);}
+
+/* Mixs / natural spices: photo cards, unlike the previous editorial rows. */
+.wpMixSection,.wpSpiceCatalog {
+  width:min(100% - 46px,1310px);
+  margin:0 auto;padding:74px 0 65px;
+  text-align:center;
+}
+.wpMixSection + .wpMixSection { padding-top:12px; }
+.wpMixSection > h1,.wpMixSection > h2 {
+  max-width:900px;
+  margin:0 auto 68px;
+  font-size:clamp(31px,3.4vw,46px);
+  line-height:1.18;
+}
+.wpSpiceNotice {
+  max-width:900px;
+  font-family:Georgia,"Times New Roman",serif !important;
+  font-size:clamp(20px,2vw,26px);
+  font-weight:700!important;
+  margin:0 auto 59px;
+  line-height:1.4;
+}
+.wpProductGallery {
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:42px 24px;
+  text-align:center;
+}
+.wpGalleryProduct {min-width:0;position:relative;}
+.wpGalleryProduct figure {
+  margin:0 auto 15px;display:grid;place-items:center;
+  width:100%;aspect-ratio:1/1;
+  background:#fff;
+  border:1px solid #ebebeb;
+  box-shadow:0 2px 12px rgba(0,0,0,.19);
+  overflow:hidden;
+}
+.wpGalleryProduct img {
+  display:block;width:100%;height:100%;
+  object-fit:contain;
+  object-position:center;
+  padding:9px;
+  transition:transform .32s ease;
+}
+.wpGalleryProduct:hover img { transform:scale(1.04); }
+.wpGalleryProduct h3 {
+  font-size:clamp(16px,1.35vw,21px);
+  line-height:1.32;
+  margin:0 auto 11px;
+  max-width:310px;
+}
+.wpGalleryProductCopy {
+  text-align:center;color:#696969;
+  font-size:clamp(12px,.93vw,14px);line-height:1.5;
+  padding:0 3px 5px;
+}
+.wpGalleryProductCopy p {margin:0 auto 5px;line-height:1.52;}
+.wpIllustrationNote {font-size:10px;color:#888;text-transform:uppercase;letter-spacing:.08em;}
+.wpSpiceGallery .wpGalleryProduct figure {margin-bottom:16px;}
+.wpSpiceGallery .wpGalleryProduct h3 {font-weight:700;}
+
+/* Les chapelures: original descriptive copy above the three-image gallery. */
+.wpBreadcrumbsContent {
+  width:min(100% - 50px,940px);margin:0 auto;
+  padding:95px 0 80px;
+}
+.wpBreadcrumbsContent > p {
+  color:#555;
+  font-size:clamp(15px,1.4vw,18px);
+  margin:0 0 16px;
+  line-height:1.85;
+}
+.wpBreadcrumbsContent > p strong { color:var(--wp-burgundy);font-weight:800; }
+.wpInlinePack {display:block; margin-top:4px;}
+.wpChapelureGallery {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:0;margin:52px auto 0;
+  width:min(100%,820px);
+}
+.wpChapelureGallery img {display:block;width:100%;height:280px;object-fit:cover;}
+.wpChapelureGallery img:last-child {
+  grid-column:1/-1;width:100%;height:310px;
+}
+
+/* Qui sommes-nous: original chronology, two archival photos first. */
+.wpCompanyIntro {
+  width:min(100% - 44px,1030px);text-align:center;
+  padding:102px 0 40px;margin:0 auto;
+}
+.wpCompanyIntro h1 {
+  margin:0 0 6px;
+  font-size:clamp(35px,3.3vw,46px);
+  line-height:1.2;
+}
+.wpCompanyIntro > p {font-size:clamp(15px,1.7vw,19px);color:#666;margin:0 auto 30px;}
+.wpCompanyPhotos {
+  display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;align-items:start;
+}
+.wpCompanyPhotos img {display:block;width:100%;height:315px;object-fit:cover;}
+.wpCompanyHistory {max-width:980px;margin:0 auto;padding:64px 25px 70px;text-align:center;}
+.wpCompanyHistory h2 {font-size:clamp(31px,3vw,43px);margin:0 0 20px;}
+.wpCompanyHistory p {font-size:16px;color:#666;max-width:790px;margin:0 auto 23px;}
+.wpCompanyHistory img {display:block;margin:38px auto 0;width:min(60%,317px);height:auto;}
+.wpCompanyPromises {
+  max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(3,1fr);
+  gap:35px;padding:45px 25px 65px;text-align:center;
+}
+.wpCompanyPromises h3 {font-size:22px;line-height:1.25;margin:0 0 15px;}
+.wpCompanyPromises p {font-size:15px;color:#686868;margin:0;}
+.wpCompanyHelp {text-align:center;max-width:750px;margin:0 auto;padding:25px 25px 85px;}
+.wpCompanyHelp h2 {font-size:29px;margin:0 0 15px;}
+.wpCompanyHelp p {color:#777;font-size:16px;margin:0 0 26px;}
+.wpCompanyHelp a {display:inline-block;background:var(--wp-burgundy);color:white;padding:14px 32px;font-weight:700;border-radius:3px;}
+.wpCompanyHelp a:hover {color:white;background:#6c0f2c;}
+
+/* WordPress mobile: logo and hamburger on white, no pill labelled Menu. */
+@media(max-width:1100px) {
+  .siteHeader .mobileMenu > summary {
+    position:relative;
+    display:grid !important;
+    place-items:center !important;
+    width:44px !important;min-width:44px !important;height:44px;
+    border:0 !important;
+    border-radius:0!important;
+    padding:0!important;
+    color:transparent!important;
+    font-size:0!important;
+  }
+  .siteHeader .mobileMenu > summary::before {
+    content:"";display:block;width:25px;height:16px;
+    border-top:2px solid #1c1c1c;border-bottom:2px solid #1c1c1c;
+  }
+  .siteHeader .mobileMenu > summary::after {
+    content:"";position:absolute;width:25px;height:2px;background:#1c1c1c;
+    top:calc(50% - 1px);left:calc(50% - 12.5px);
+  }
+  .siteHeader .headerInner {height:80px;grid-template-columns:minmax(0,1fr) auto;}
+  .siteHeader .logo img {width:145px;}
+}
+@media(max-width:900px) {
+  .wpProductGallery {grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 22px;}
+  .wpMixSection,.wpSpiceCatalog {width:min(100% - 42px,800px);}
+  .wpCompanyPhotos img {height:260px;}
+  .wpCompanyPromises {grid-template-columns:1fr;gap:24px;max-width:450px;}
+}
+@media(max-width:650px) {
+  .wpSpicesIntro {width:calc(100% - 46px);padding:52px 0 61px;}
+  .wpSpicesIntro > p {font-size:15px;line-height:1.73;margin:0 auto 29px;}
+  .wpSpiceChoices {grid-template-columns:1fr;gap:20px;}
+  .wpSpiceChoices a {font-size:29px;line-height:1.2;padding:5px 0;}
+  .wpNaturalBody {width:calc(100% - 48px);padding:52px 0 70px;}
+  .wpNaturalBody h1 {font-size:35px;line-height:1.32;margin:0 auto 23px;max-width:320px;}
+  .wpNaturalBody p {font-size:15px;line-height:1.85;margin-bottom:37px;}
+  .wpNaturalBody h2 {font-size:24px;line-height:1.15;margin-bottom:24px;}
+  .wpConditioningImage {margin:0 auto 25px;}
+  .wpNaturalLinks {grid-template-columns:1fr;gap:21px;}
+  .wpNaturalLinks a {font-size:28px;padding:7px 4px;}
+  .wpMixSection,.wpSpiceCatalog {padding:54px 0 46px;width:calc(100% - 68px);}
+  .wpMixSection > h1,.wpMixSection > h2 {
+    font-size:32px;line-height:1.06;max-width:340px;margin:0 auto 71px;
+  }
+  .wpSpiceNotice {font-size:20px;margin-bottom:50px;line-height:1.42;}
+  .wpProductGallery {grid-template-columns:1fr;gap:41px;}
+  .wpGalleryProduct figure {width:100%;margin-bottom:20px;}
+  .wpGalleryProduct h3 {font-size:20px;margin-bottom:11px;}
+  .wpGalleryProductCopy {font-size:14px;max-width:350px;margin:0 auto;}
+  .wpGalleryProduct img {padding:9px;}
+  .wpBreadcrumbsContent {width:calc(100% - 55px);padding:61px 0 63px;}
+  .wpBreadcrumbsContent > p {font-size:16px;margin-bottom:18px;line-height:1.78;}
+  .wpChapelureGallery {margin-top:56px;gap:0;}
+  .wpChapelureGallery img {height:155px;}
+  .wpChapelureGallery img:last-child {height:190px;}
+  .wpCompanyIntro {padding:116px 0 25px;width:calc(100% - 30px);}
+  .wpCompanyIntro h1 {font-size:36px;}
+  .wpCompanyIntro > p {font-size:17px;}
+  .wpCompanyPhotos {grid-template-columns:1fr;gap:18px;}
+  .wpCompanyPhotos img {height:auto;aspect-ratio:1.55;object-fit:cover;}
+  .wpCompanyHistory {padding:58px 22px;}
+  .wpCompanyHistory p {font-size:15px;}
+  .wpCompanyPromises {padding:30px 25px 50px;}
+  .wpCompanyHelp {padding-bottom:60px;}
+}
+@media(prefers-reduced-motion:reduce) {
+  .wpRestored *, .wpRestored *::before, .wpRestored *::after {transition:none!important;animation:none!important;}
+}
+
+/* Final mobile geometry calibration against the 390px WordPress reference. */
+@media(max-width:650px) {
+  .siteHeader .logo img { width:130px !important; }
+  .wpSpicesIntro > p { max-width:310px; margin-bottom:36px; }
+  .wpSpiceChoices { gap:35px; }
+  .wpBreadcrumbsContent { padding-top:80px; }
+  .wpChapelureGallery { margin-top:104px; }
+  .wpCompanyIntro { padding-top:154px; }
+
+  /* Source marinades catalogue uses closer-spaced repeated product entries. */
+  .marinadeHoverGrid { gap:24px !important; }
+  .marinadeHoverMedia {
+    height:225px !important;min-height:0 !important;
+    aspect-ratio:auto !important;
+    background:#fff !important;
+    border-radius:2px !important;
+    border-color:#eee !important;
+  }
+  .marinadeHoverMedia > img {
+    width:100% !important;height:220px !important;
+    object-fit:contain !important;padding:10px !important;
+  }
+  .marinadeHoverCard {padding-bottom:10px !important;}
+}
+
+.wpPackagingContent { max-width:1000px; width:calc(100% - 48px);margin:0 auto;padding:80px 0 100px; text-align:center; }
+.wpPackagingContent h1 {font-size:clamp(30px,3vw,43px);margin:0 0 35px;}
+.wpPackagingContent h2 {font-size:clamp(25px,2.7vw,38px);margin:0 auto 22px;}
+.wpPackagingContent > p {font-size:17px;color:#5a5a5a;max-width:850px;margin:0 auto 36px;}
+.wpPackingList {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 45px;text-align:left;}
+.wpPackingList article {padding:20px 0;border-bottom:1px solid #e0e0e0;}
+.wpPackingList h3 {font-size:19px;margin:0 0 8px;}
+.wpPackingList p {color:#666;font-size:15px;margin:0;}
+@media(max-width:650px) {
+ .wpPackagingContent {padding:65px 0 80px;}
+ .wpPackingList {grid-template-columns:1fr;gap:8px;}
+ .wpPackingList article {padding:15px 0;}
+}
