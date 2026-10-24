@@ -1,9 +1,9 @@
 import EpicenouBrand from "../components/EpicenouBrand";
 import LegacyQuality from "../components/LegacyQuality";
 const refs=[
-["Chapelure","Panade de blé : farine de blé, levure, sel","/assets/products/chapelures/chapelure.webp",false],
+["Chapelure","Panade de blé : farine de blé, levure, sel","/assets/products/transparent/chapelures/chapelure.webp",false],
 ["Chapelure jaune","Panade de blé : farine de blé, levure, sel, épices","/assets/products/external/breadcrumbs.webp",true],
-["Chapelure dorée","Blé, seigle, orge","/assets/products/chapelures/chapelure-doree.webp",false],
+["Chapelure dorée","Blé, seigle, orge","/assets/products/transparent/chapelures/chapelure-doree.webp",false],
 ["Panade Toscane","Carotte, paprika, basilic","/assets/schnitzel-g9b1dff796_1920.jpg",true]
 ] as const;
 export const metadata={title:"Les chapelures",alternates:{canonical:"/les-chapelures/"}};

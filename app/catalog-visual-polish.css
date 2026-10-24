@@ -1,0 +1,159 @@
+/* Tardy: catalogue photo treatment and responsive rhythm, all public routes.
+   Editorial photographs keep their natural background; processed packshots
+   use alpha and an unframed cream canvas. The original source assets remain. */
+.catalogInlineMedia,
+.spiceProductRow figure,
+.chapelureProductRow figure,
+.epicenouUniverse a,
+.tardySpiceImage { isolation: isolate; }
+.catalogInlineMedia {
+  display: grid;
+  place-items: center;
+  background: transparent !important;
+  overflow: hidden;
+  min-width: 0;
+}
+.catalogLineWithMedia {
+  column-gap: clamp(16px, 2.3vw, 35px) !important;
+  padding: 25px 0 !important;
+}
+.catalogLineWithMedia > * { min-width: 0; }
+.catalogInlineMedia img {
+  width: 100%;
+  height: 180px;
+  object-fit: contain;
+  object-position: center;
+  background: transparent !important;
+  mix-blend-mode: normal;
+  padding: 1px;
+}
+.catalogLineData { min-width:0; }
+.catalogLineData p { font-size: clamp(12px, 1.1vw, 14px); line-height: 1.58; }
+.spiceProductRow figure {
+  background: #f1ebe3;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.spiceProductRow figure img { background: transparent; object-fit: contain; }
+.chapelureProductRow figure {
+  display: grid;
+  place-items: center;
+  background: #f3eee6;
+  overflow: hidden;
+}
+.chapelureProductRow:first-child figure img {
+  object-fit: contain;
+  padding: 6px;
+  background: transparent;
+}
+.chapelureProductRow figure img { max-width:100%; }
+.epicenouUniverse a { min-width: 0; text-decoration: none; }
+.epicenouUniverse a img { object-position: center; }
+.epicenouUniverse a:nth-child(1) img,
+.epicenouUniverse a:nth-child(2) img,
+.epicenouUniverse a:nth-child(3) img {
+  object-fit: contain;
+  padding: clamp(8px, 2vw, 22px);
+  background: #f4eee6;
+}
+.epicenouUniverse a span { display: block; padding: 13px 2px 16px; }
+.tardyDesktopNav .tardySpiceImage img { background:transparent; mix-blend-mode:normal; }
+
+/* Defend all public pages against narrow viewports and oversized fixed copy.
+   Do not override the faithful WordPress home or the shared footer order. */
+main:not(.tardyHomeParity) { min-width: 0; }
+main:not(.tardyHomeParity) :is(.pageHeroGrid, .sectionHead, .technicalEntry, .catalogLine, .pageHeroGrid > *, .catalogLine > *) {
+  min-width: 0;
+}
+main:not(.tardyHomeParity) :is(.pageHero h1, .sectionHead h2, .technicalSectionTitle, .productPageH1) {
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+main:not(.tardyHomeParity) img { max-width:100%; }
+@media (min-width: 901px) {
+  .epicenouUniverse img { height: clamp(230px,24vw,310px); }
+}
+@media (max-width: 900px) {
+  .epicenouUniverse { column-gap: 17px; row-gap: 25px; }
+  .epicenouUniverse a:last-child { margin-left: 0; }
+  .catalogLineWithMedia { padding: 23px 0 !important; }
+}
+@media (max-width: 760px) {
+  main:not(.tardyHomeParity) .pageHero { padding: 36px 0 37px; }
+  main:not(.tardyHomeParity) .pageHero h1 {
+    font-size: clamp(33px, 9vw, 49px) !important;
+    line-height: 1.05;
+  }
+  main:not(.tardyHomeParity) .sectionHead h2,
+  main:not(.tardyHomeParity) .technicalSectionTitle {
+    font-size: clamp(32px, 8.2vw, 47px) !important;
+    line-height: 1.04 !important;
+  }
+  main:not(.tardyHomeParity) .section { padding-top: clamp(40px, 9vw, 66px); padding-bottom: clamp(40px, 9vw, 66px); }
+  .catalogLineWithMedia {
+    display:grid;
+    grid-template-columns: 26px minmax(0,1fr) !important;
+    column-gap: 14px !important;
+    row-gap: 10px !important;
+    padding: 24px 0 !important;
+  }
+  .catalogLineWithMedia .catalogLineIndex { grid-column: 1 !important; grid-row: 1 !important; }
+  .catalogLineWithMedia h3 { grid-column: 2 !important; grid-row: 1 !important; font-size:clamp(24px,6vw,30px); line-height:1.1; }
+  .catalogLineWithMedia .catalogInlineMedia {
+    grid-column: 2 !important;
+    grid-row: 2 !important;
+    width: min(100%,310px);
+    margin: 3px 0 2px;
+  }
+  .catalogLineWithMedia .catalogLineData {
+    grid-column: 2 !important; grid-row: 3 !important;
+    max-width: 540px;
+  }
+  .catalogInlineMedia img { height: min(47vw,195px); max-height: 195px; }
+  .catalogLineData p { font-size:13px; line-height:1.6; }
+  .chapelureProductRow { gap: 17px; padding: 30px 0; }
+  .chapelureProductRow figure img { height: 210px; object-fit: contain; }
+}
+@media (max-width: 650px) {
+  .epicenouUniverse {
+    grid-template-columns: 1fr !important;
+    gap: 7px !important;
+  }
+  .epicenouUniverse a,
+  .epicenouUniverse a:last-child {
+    display:grid !important;
+    grid-template-columns: minmax(100px, 37%) minmax(0, 1fr);
+    width:100% !important;
+    min-height:128px;
+    margin:0 !important;
+    gap:17px;
+    align-items:center;
+    border-bottom:1px solid var(--line);
+  }
+  .epicenouUniverse a img,
+  .epicenouUniverse a:nth-child(n) img {
+    width:100% !important;
+    height:112px !important;
+    padding:12px;
+    object-fit:contain !important;
+    background: #f3ede5 !important;
+  }
+  .epicenouUniverse a span {
+    padding: 0 6px 0 0;
+    font-size: clamp(19px,5.4vw,25px);
+    line-height: 1.15;
+  }
+  .spiceProductRow { grid-template-columns: 22px 92px minmax(0,1fr); gap:10px; padding:15px 0; min-height:124px; }
+  .spiceProductRow figure { height:94px; }
+  .spiceProductRow figure img { padding:5px; }
+  .spiceProductRow h2 { font-size: clamp(19px,5vw,24px); overflow-wrap:break-word; }
+  .chapelureProductRow figure img { height: min(55vw,220px); }
+}
+@media (max-width: 390px) {
+  .spiceProductRow { grid-template-columns:20px 80px minmax(0,1fr); gap:9px; }
+  .spiceProductRow figure { height:82px; }
+  .catalogLineWithMedia { column-gap:11px !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalogLineWithMedia img,.epicenouUniverse img,.spiceProductRow img { transition:none !important; transform:none !important; }
+}

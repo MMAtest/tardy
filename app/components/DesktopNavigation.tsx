@@ -44,7 +44,7 @@ const spices = [
     number: "01",
     title: "Les mixs complets",
     description: "Préparations à cuire et charcuterie sèche",
-    src: "/assets/products/mixs/merguez.webp",
+    src: "/assets/products/transparent/mixs/merguez.webp",
     href: "/les-mixs-complets/",
   },
   {
@@ -58,7 +58,7 @@ const spices = [
     number: "03",
     title: "Les chapelures",
     description: "Panades et chapelures",
-    src: "/assets/products/chapelures/chapelure.webp",
+    src: "/assets/products/transparent/chapelures/chapelure.webp",
     href: "/les-chapelures/",
   },
 ];

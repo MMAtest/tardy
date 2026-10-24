@@ -8,6 +8,7 @@ import "./home-recovery.css";
 import "./pre-footer-trust.css";
 import "./footer-and-hero.css";
 import "./desktop-navigation.css";
+import "./catalog-visual-polish.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),

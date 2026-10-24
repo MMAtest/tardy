@@ -22,21 +22,21 @@ const sec=[
 ["Liant Saucisson sec","Pour une bonne acidification, ainsi qu’une couleur et un gout excellent.","Sans allergènes","Seau 5 kg"]
 ];
 const mixVisuals:Record<string,{src:string,illustrative?:boolean}>={
-"Préparation merguez":{src:"/assets/products/mixs/merguez.webp"},
+"Préparation merguez":{src:"/assets/products/transparent/mixs/merguez.webp"},
 "Préparation saucisse chipolata":{src:"/assets/editorial-external/sausages-butcher.webp",illustrative:true},
 "Préparation Saucisse fraiche":{src:"/assets/editorial-external/sausage-making.webp",illustrative:true},
-"Préparation mix chipo aux herbes":{src:"/assets/products/mixs/chipo-herbes.webp"},
+"Préparation mix chipo aux herbes":{src:"/assets/products/transparent/mixs/chipo-herbes.webp"},
 "Préparation saucisse aux Cèpes I":{src:"/assets/marinades/Marinade-Aux-Cepes-_cut.webp",illustrative:true},
-"Préparation saucisse villageoise":{src:"/assets/products/mixs/villageoise.webp"},
+"Préparation saucisse villageoise":{src:"/assets/products/transparent/mixs/villageoise.webp"},
 "Mix saucisse au piment d’Espelette":{src:"/assets/products/external/espelette.webp",illustrative:true},
-"Mix saucisse antillaise colombo":{src:"/assets/products/mixs/antillaise-colombo.webp"},
-"Mix saucisse mexicaine":{src:"/assets/products/mixs/mexicaine.webp"},
-"Mix saucisse volaille":{src:"/assets/products/mixs/volaille.webp"},
-"Mix saucisse indienne":{src:"/assets/products/mixs/indienne.webp"},
-"Mix chorizo à cuire au piment fumé de la Vera":{src:"/assets/products/mixs/chorizo-vera.webp"},
+"Mix saucisse antillaise colombo":{src:"/assets/products/transparent/mixs/antillaise-colombo.webp"},
+"Mix saucisse mexicaine":{src:"/assets/products/transparent/mixs/mexicaine.webp"},
+"Mix saucisse volaille":{src:"/assets/products/transparent/mixs/volaille.webp"},
+"Mix saucisse indienne":{src:"/assets/products/transparent/mixs/indienne.webp"},
+"Mix chorizo à cuire au piment fumé de la Vera":{src:"/assets/products/transparent/mixs/chorizo-vera.webp"},
 "Epices rôtisserie tbv":{src:"/assets/editorial-external/spices-dark.webp",illustrative:true},
-"Assaisonnement farces":{src:"/assets/products/mixs/assaisonnement-farces.webp"},
-"Mix chorizo sec au piment fumé de la Vera":{src:"/assets/products/mixs/chorizo-vera.webp",illustrative:true},
+"Assaisonnement farces":{src:"/assets/products/transparent/mixs/assaisonnement-farces.webp"},
+"Mix chorizo sec au piment fumé de la Vera":{src:"/assets/products/transparent/mixs/chorizo-vera.webp",illustrative:true},
 "Mix complet saucisson sec":{src:"/assets/editorial-external/cured-sausage.webp",illustrative:true},
 "Liant Saucisson sec":{src:"/assets/editorial-external/spices-rustic.webp",illustrative:true}
 };
