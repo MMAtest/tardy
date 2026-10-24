@@ -1,0 +1,51 @@
+/*
+ * Last optical parity pass against casing-tardy.com, 24 Oct 2026.
+ * Scope: top-level category galleries and homepage only.
+ * Preserves approved desktop mega-menus and pre-footer sections.
+ */
+
+/* Three catalogue columns in WordPress on tablets and desktop;
+   the previous four-column desktop / two-column tablet grid made
+   headings and imagery diverge substantially from the reference. */
+@media (min-width: 701px) {
+  .wpMixProducts .wpProductGallery,
+  .wpSpiceProducts .wpProductGallery {
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    max-width: 1130px;
+    margin-inline: auto;
+    column-gap: clamp(20px, 2.2vw, 34px);
+    row-gap: clamp(26px, 3vw, 42px);
+  }
+  .wpMixProducts .wpMixSection,
+  .wpSpiceProducts .wpSpiceCatalog {
+    width: min(calc(100% - 50px), 1170px);
+  }
+  .wpProductGallery .wpGalleryProduct {
+    min-width:0;
+  }
+}
+
+/* Keep the small-tablet cards readable rather than squeezing three into 600px. */
+@media (min-width: 651px) and (max-width: 700px) {
+  .wpMixProducts .wpProductGallery,
+  .wpSpiceProducts .wpProductGallery {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
+}
+
+/* Home-specific final adjustments live at the end of home-parity.css,
+   which loads AFTER root layout styles under Next.js. */
+
+/* The original category index deliberately has a larger first pause after
+   "Boyaux de Porc"; keep all four categories and their links unchanged. */
+@media (max-width: 650px) {
+  .wpNaturalBody h1 { font-size: 37px; }
+  .wpNaturalBody h2 {
+    font-size: 26px;
+    max-width: 315px;
+    margin-bottom: 14px;
+  }
+  .wpConditioningImage {margin-bottom: 13px;}
+  .wpNaturalLinks a:first-child {margin-bottom: 46px;}
+  .wpSpicesIntro {padding-bottom: 80px;}
+}

@@ -902,3 +902,27 @@ body:has(main.tardyHomeParity) { margin: 0; }
     padding-bottom: 0;
   }
 }
+
+/* Source screenshot parity: page stylesheet loads after global layout CSS.
+   These home-only optical overrides must remain at the END of this file. */
+@media (min-width:1101px) {
+  .tardyHomeParity .parityHero h1 {
+    max-width: 510px;
+    font-size: clamp(47px,4.15vw,61px);
+    line-height:1.07;
+    margin-inline:auto;
+  }
+  .tardyHomeParity .parityHeroContent { width:min(96%,850px); }
+}
+@media (min-width:768px) and (max-width:1100px) {
+  .tardyHomeParity .parityHero h1 { max-width:min(78vw,510px); }
+}
+@media (max-width:767px) {
+  .tardyHomeParity .parityHero h1 {
+    font-size:clamp(32px,9.75vw,44px);
+    line-height:1.09;
+    max-width:100%;
+  }
+  .tardyHomeParity .parityYearMark { bottom:8%; }
+  .tardyHomeParity .parityYearMark strong { font-size:clamp(90px,30vw,128px);line-height:.90; }
+}
