@@ -11,6 +11,7 @@ import "./desktop-navigation.css";
 import "./catalog-visual-polish.css";
 import "./source-layout-parity.css";
 import "./pixel-parity-20261024.css";
+import "./footer-wordpress-parity-20261026.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),
@@ -31,5 +32,5 @@ function Footer(){return <footer className="siteFooter"><div className="shell">
     <div className="footerCol"><b>Épices & préparations</b><a href="/les-mixs-complets/">Mixs complets</a><a href="/epices-naturelles/">Épices naturelles</a><a href="/les-chapelures/">Chapelures</a><a href="/nos-produits/marinades/">Marinades</a><a href="/nos-produits/emballages-sacs/">Emballages</a></div>
     <div className="footerCol footerContact"><b>Contact</b><a href="tel:+33491081059">+33 4 91 08 10 59</a><a href="mailto:commercial@casing-tardy.com">commercial@casing-tardy.com</a><span>27, traverse Antoine Donaz<br/>13015 Marseille · France</span><a href="/contactez-nous/">Contactez-nous →</a></div>
   </div>
-  <div className="footerBottom"><span>© 2026 Casing Tardy · Marseille</span><span>Maison fondée en 1894</span></div>
+  <div className="footerBottom"><span>Copyright © 2026 Casing Tardy. All Rights Reserved.</span><span>Maison fondée en 1894</span></div>
 </div></footer>}

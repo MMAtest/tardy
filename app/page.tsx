@@ -21,7 +21,7 @@ export default function Home() {
 
       <section className="parityHistory" aria-labelledby="parityHistoryTitle">
         <div className="parityYearImage">
-          <img src="/assets/home-original/histoire.webp" alt="Planche de charcuteries et de saucissons traditionnels" loading="eager" />
+          <img src="/assets/home-original/histoire-source.webp" alt="Planche de charcuteries et de saucissons traditionnels" loading="eager" />
           <div className="parityYearMark" aria-label="Depuis 1894">
             <span>Since</span><strong>1894</strong>
           </div>

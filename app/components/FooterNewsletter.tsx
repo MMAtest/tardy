@@ -1,26 +1,42 @@
+"use client";
+
+import { useState, type FormEvent } from "react";
+
 /**
- * Site-wide newsletter invitation displayed after the two shared trust bands.
- * The mailto action preserves the existing contact workflow (no newsletter API).
+ * Tardy newsletter — visual parity with the original WordPress banner.
+ * The CTA opens a prefilled email request; it does NOT pretend to add the
+ * visitor to an unconnected mailing list or transmit data to an API.
  */
 export default function FooterNewsletter() {
+  const [email, setEmail] = useState("");
+  function requestSubscription(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    const submitted = email.trim();
+    if (!submitted) return;
+    const subject = encodeURIComponent("Demande d'inscription à la newsletter Tardy");
+    const body = encodeURIComponent("Bonjour,\n\nJe souhaite m'inscrire à la newsletter Casing Tardy.\nAdresse e-mail : " + submitted + "\n\nMerci.");
+    window.location.href = `mailto:commercial@casing-tardy.com?subject=${subject}&body=${body}`;
+  }
+
   return (
-    <section className="homeNewsletterEditorial tardyGlobalNewsletter" aria-labelledby="tardyNewsletterTitle">
-      <div className="homeNewsletterEditorialImage">
-        <img src="/assets/home-original/hero.jpg" alt="" aria-hidden="true" loading="lazy" />
+    <section className="tardyNewsletterReference" aria-labelledby="tardyNewsletterTitle">
+      <div className="tardyNewsletterReferenceContent">
+        <h2 id="tardyNewsletterTitle">Inscrivez-vous à notre newsletter<br />pour recevoir nouvelles &amp; promotions</h2>
+        <form className="tardyNewsletterForm" onSubmit={requestSubscription}>
+          <label className="sr-only" htmlFor="tardyNewsletterEmail">Votre adresse e-mail</label>
+          <input
+            id="tardyNewsletterEmail"
+            name="email"
+            type="email"
+            autoComplete="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            placeholder="Saisir votre Email"
+            required
+          />
+          <button type="submit">Souscrire</button>
+        </form>
       </div>
-      <div className="homeNewsletterEditorialContent">
-        <div className="eyebrow">Maison Tardy</div>
-        <h2 id="tardyNewsletterTitle">
-          Inscrivez-vous à notre newsletter<br />pour recevoir nouvelles &amp; promotions
-        </h2>
-        <a
-          className="newsletterTextLink"
-          href="mailto:commercial@casing-tardy.com?subject=Inscription%20newsletter%20Tardy"
-        >
-          <span>Souscrire</span><i aria-hidden="true">↗</i>
-        </a>
-      </div>
-      <div className="homeNewsletterEditorialYear" aria-hidden="true">1894</div>
     </section>
   );
 }

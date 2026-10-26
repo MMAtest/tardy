@@ -926,3 +926,134 @@ body:has(main.tardyHomeParity) { margin: 0; }
   .tardyHomeParity .parityYearMark { bottom:8%; }
   .tardyHomeParity .parityYearMark strong { font-size:clamp(90px,30vw,128px);line-height:.90; }
 }
+
+
+/* 26 Oct 2026 — measured against live WordPress at 390 / 1440 / 3840px.
+ * Original Elementor uses a fixed centered 1290px canvas, not fluid 4K sections.
+ * Home-only rules; shared navigation, subpages and prefooter stay untouched.
+ */
+.tardyHomeParity {
+  width: min(100%, 1290px);
+  max-width: 1290px;
+  margin-inline: auto;
+}
+@media (min-width: 1101px) {
+  /* WordPress hero: x=75, y=201, width=1290, height=793 at 1440px. */
+  .tardyHomeParity .parityHero { margin-top: 112px; }
+  /* Original history artwork: 533x460 at x=175/y=1214 on 1440px. */
+  .tardyHomeParity .parityYearImage {
+    width: 533px;
+    max-width: none;
+    height: 460px;
+    max-height: none;
+    aspect-ratio: auto;
+    margin-left: 25px;
+    align-self: center;
+  }
+  /* Elementor's quality split fills the complete 1290px container. */
+  .tardyHomeParity .parityQuality {
+    grid-template-columns: 50.465116% 49.534884%;
+    padding: 0 0 100px;
+  }
+  .tardyHomeParity .parityPatternImage {
+    transform: none;
+    width: 100%;
+  }
+  /* Image and card intentionally overlap the banner's outside gutter. */
+  .tardyHomeParity .parityFabrication {
+    padding: 0 0 100px;
+  }
+  .tardyHomeParity .parityFabricationInner {
+    width: calc(100% + 90px);
+    max-width: none;
+    margin-left: -45px;
+    margin-right: 0;
+  }
+}
+@media (max-width: 767px) {
+  /* Source artwork sits x=15/y=529 at 390px, as a 360x270 panel. */
+  .tardyHomeParity .parityHero { margin-top: 39px; }
+  .tardyHomeParity .parityYearImage {
+    aspect-ratio: 4 / 3;
+  }
+  .tardyHomeParity .parityHistoryText {
+    min-height: 505px;
+    padding-top: 77px;
+  }
+  .tardyHomeParity .parityPatternImage {
+    width: calc(100% - 30px);
+  }
+  .tardyHomeParity .parityQualityText {
+    min-height: 875px;
+  }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) {
+    max-width: 270px;
+    margin-inline: auto;
+  }
+  .tardyHomeParity .parityFabricationPhoto {
+    width: calc(100% - 90px);
+  }
+  .tardyHomeParity .parityFabricationCard {
+    width: calc(100% - 60px);
+  }
+}
+@media (max-width: 359px) {
+  .tardyHomeParity .parityPatternImage { width: calc(100% - 20px); }
+  .tardyHomeParity .parityFabricationPhoto { width: calc(100% - 50px); }
+  .tardyHomeParity .parityFabricationCard { width: calc(100% - 30px); }
+}
+
+
+/* Cross-screen typography and invariant source positioning. */
+.tardyHomeParity h1,
+.tardyHomeParity h2,
+.tardyHomeParity .parityYearMark strong { font-weight: 700; }
+@media (min-width: 1101px) {
+  .tardyHomeParity .parityHero h1 {
+    width: 485px;
+    max-width: min(100%, 485px);
+    font-size: 60px;
+    line-height: 1;
+  }
+  .tardyHomeParity .parityHeroContent { transform: translateY(-9px); }
+  .tardyHomeParity .parityHistory {
+    padding-top: 115px;
+    padding-right: 75px;
+    padding-left: 75px;
+  }
+  .tardyHomeParity .parityYearImage { transform: translateY(5px); }
+  .tardyHomeParity .parityHistoryText { padding-left: 168px; }
+  .tardyHomeParity .parityHistoryText > * { top: -3px; }
+  .tardyHomeParity .parityHistoryText h2 { width: 400px; max-width: 100%; }
+  .tardyHomeParity .parityQualityText h2:not(:first-of-type) { line-height: 40px; }
+  .tardyHomeParity .parityFabricationCard h2 {
+    width: 400px;
+    max-width: 100%;
+    line-height: 1;
+  }
+}
+@media (min-width: 1920px) {
+  .tardyHomeParity .parityQualityText { padding-left: 140px; }
+}
+@media (max-width: 767px) {
+  .tardyHomeParity .parityHero h1 {
+    width: calc(100% + 40px);
+    max-width: none;
+    margin-left: -20px;
+    margin-right: -20px;
+    font-size: 36px;
+    line-height: 1.2;
+  }
+  .tardyHomeParity .parityHistoryText h2,
+  .tardyHomeParity .parityQualityText h2,
+  .tardyHomeParity .parityFabricationCard h2 { line-height: 1; }
+  .tardyHomeParity .parityQuality { padding-bottom: 64px; }
+  .tardyHomeParity .parityFabrication {
+    padding-top: 115px;
+    padding-bottom: 26px;
+  }
+}
+
+/* Keep the original photograph centered within the fixed 1290px banner.
+ * This renders closer to the reference screenshots in BackstopJS. */
+.tardyHomeParity .parityHeroPhoto { object-position: center center; }
