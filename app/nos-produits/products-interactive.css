@@ -1,8 +1,8 @@
 /* 4 schémas interactifs affichés directement, sans cartes ni accordéon.
  * Style limité à la page /nos-produits/. */
 .wpNaturalLanding .wpNaturalMapsGrid {
-  width: min(100%, 1180px);
-  margin: clamp(36px, 5vw, 70px) auto 0;
+  width: min(100%, 960px);
+  margin: 32px auto 48px;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: clamp(22px, 3vw, 46px);
@@ -19,7 +19,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 1.38;
-  min-height: 300px;
+  min-height: 240px;
   border: 1px solid #e2d7ca;
   border-radius: 3px;
   background: #faf8f5;
@@ -52,11 +52,7 @@
   z-index: 3;
 }
 .wpNaturalLanding .wpNaturalMapsGrid .animalLegend {
-  left: 12px;
-  bottom: 12px;
-  font-size: 11px;
-  max-width: calc(100% - 24px);
-  pointer-events: none;
+  display: none;
 }
 .wpNaturalLanding .manufacturedSchematic {
   display: flex;
@@ -114,7 +110,7 @@
 @media (max-width: 700px) {
   .wpNaturalLanding .wpNaturalMapsGrid { grid-template-columns: 1fr; gap: 28px; }
   .wpNaturalLanding .wpNaturalMapsGrid .animalMapReal,
-  .wpNaturalLanding .manufacturedSchematic { min-height: 285px; }
+  .wpNaturalLanding .manufacturedSchematic { min-height: 240px; }
   .wpNaturalLanding .wpNaturalMapsGrid .hotspot { width: 38px; height: 38px; }
   .wpNaturalLanding .manufacturedSchematicGrid svg { height: 140px; }
   .wpNaturalLanding .manufacturedSchematicGrid a span { font-size: 14px; }
@@ -122,4 +118,19 @@
 @media (prefers-reduced-motion: reduce) {
   .wpNaturalLanding .manufacturedSchematicGrid a,
   .wpNaturalLanding .manufacturedSchematicGrid svg { transition: none; }
+}
+
+/* Coordinates are relative to the original HD image, without letterboxing. */
+.wpNaturalLanding .wpNaturalMapsGrid .animalMapHD {
+  display: block;
+  min-height: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+.wpNaturalLanding .wpNaturalMapsGrid .animalMapHD > img {
+  width: 100%;
+  height: auto;
+  padding: 0;
 }

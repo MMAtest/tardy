@@ -1,0 +1,30 @@
+/* All anatomical diagrams share the HD image coordinate system.
+   Legacy square frames and image padding must not shift the hotspots. */
+.animalMapReal.animalMapHD {
+  display: block;
+  width: 100%;
+  max-width: 740px;
+  height: auto !important;
+  min-height: 0 !important;
+  margin-inline: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  overflow: visible;
+}
+.animalMapReal.animalMapHD > img {
+  display: block;
+  width: 100%;
+  height: auto !important;
+  padding: 0 !important;
+  object-fit: contain;
+}
+.animalMapReal.animalMapHD .animalLegend { display: none; }
+.animalMapReal.animalMapHD .hotspot { z-index: 3; }
+.animalMapReal.animalMapHD .hotspot:focus-visible {
+  outline: 3px solid #00553e;
+  outline-offset: 5px;
+}
+@media (max-width: 720px) {
+  .animalMapReal.animalMapHD .hotspot::after { display: block; }
+}

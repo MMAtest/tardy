@@ -11,6 +11,7 @@ import "./desktop-navigation.css";
 import "./catalog-visual-polish.css";
 import "./source-layout-parity.css";
 import "./pixel-parity-20261024.css";
+import "./anatomy-maps.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://casing-tardy.com"),

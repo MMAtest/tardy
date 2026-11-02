@@ -53,6 +53,24 @@ export default function Page() {
           calibrés en paquets et filets mais aussi dans des présentations plus
           élaborées : boyaux montés sur tubes souples ou rigides.
         </p>
+        <div className="wpNaturalMapsGrid" aria-label="Les quatre schémas interactifs des boyaux">
+          <section aria-labelledby="diagram-porc">
+            <h3 id="diagram-porc">Porc et truie</h3>
+            <AnimalMap hd kind="porc" />
+          </section>
+          <section aria-labelledby="diagram-boeuf">
+            <h3 id="diagram-boeuf">Bœuf</h3>
+            <AnimalMap hd kind="boeuf" />
+          </section>
+          <section aria-labelledby="diagram-mouton">
+            <h3 id="diagram-mouton">Mouton</h3>
+            <AnimalMap hd kind="mouton" />
+          </section>
+          <section aria-labelledby="diagram-manufactures">
+            <h3 id="diagram-manufactures">Boyaux reconstitués</h3>
+            <ManufacturedDiagram />
+          </section>
+        </div>
         <h2>
           Nous proposons un large type de conditionnement adaptés à vos niveaux
           de consommation et à vos habitudes.
@@ -62,25 +80,6 @@ export default function Page() {
           src="/assets/wp-reference/boyaux-naturels.png"
           alt="Formats de conditionnement : fûts, seaux et pots"
         />
-
-        <div className="wpNaturalMapsGrid" aria-label="Les quatre schémas interactifs des boyaux">
-          <section aria-labelledby="diagram-porc">
-            <h3 id="diagram-porc">Porc et truie</h3>
-            <AnimalMap kind="porc" />
-          </section>
-          <section aria-labelledby="diagram-boeuf">
-            <h3 id="diagram-boeuf">Bœuf</h3>
-            <AnimalMap kind="boeuf" />
-          </section>
-          <section aria-labelledby="diagram-mouton">
-            <h3 id="diagram-mouton">Mouton</h3>
-            <AnimalMap kind="mouton" />
-          </section>
-          <section aria-labelledby="diagram-manufactures">
-            <h3 id="diagram-manufactures">Boyaux reconstitués</h3>
-            <ManufacturedDiagram />
-          </section>
-        </div>
       </section>
     </main>
   );

@@ -198,3 +198,7 @@
   display: block;
   max-width: 860px;
 }
+
+/* Catalogue starts directly with the first product. */
+.catalogWithoutIntro .legacyCategoryHero { border-bottom: 0; }
+.catalogWithoutIntro .legacyProductCatalog { border-top: 0; }

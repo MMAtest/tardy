@@ -1,0 +1,36 @@
+.packagingPage { --pack-wine:#871438; }
+.packagingPage .packagingIntro { display:grid;grid-template-columns:1fr 1.1fr;gap:6vw;align-items:center;padding-block:70px; }
+.packagingPage .packagingLabel {font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--pack-wine);margin:0 0 22px;font-weight:700;}
+.packagingPage h1,.packagingPage h2 {font-family:Georgia,serif;font-weight:400;letter-spacing:-.04em;line-height:1.06;}
+.packagingPage h1 {font-size:clamp(42px,4.8vw,70px);margin:0 0 26px;}
+.packagingIntroCopy>p:not(.packagingLabel) {font-size:16px;color:#666;max-width:460px;line-height:1.8;}
+.packagingPage figure {margin:0;}
+.packagingIntro figure img {display:block;width:100%;height:440px;object-fit:cover;}
+.packagingLink {display:inline-flex;align-items:center;gap:28px;color:var(--pack-wine);font-weight:700;font-size:14px;border-bottom:1px solid currentColor;padding:12px 0;margin-top:20px;}
+.packagingLink:hover {color:#00553e;}
+.packagingLink:focus-visible {outline:2px solid var(--pack-wine);outline-offset:6px;}
+.packagingRange {display:grid;grid-template-columns:1fr 1.1fr;gap:6vw;padding-block:58px 76px;border-top:1px solid #e5ddd5;scroll-margin-top:120px;}
+.packagingPage h2 {font-size:clamp(34px,3.3vw,48px);margin:0 0 22px;}
+.packagingRangeHeading>p:last-child {font-size:15px;color:#666;}
+.packagingTableHead,.packagingReference {display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:center;}
+.packagingTableHead {font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#777;padding-bottom:15px;}
+.packagingReference {padding:24px 0;border-top:1px solid #e5ddd5;}
+.packagingReference h3 {font-size:18px;font-weight:400;margin:0;color:var(--pack-wine);}
+.packagingReference h3 strong {font:400 42px Georgia,serif;}
+.packagingReference h3 span {display:block;font-size:12px;color:#666;margin-top:7px;}
+.packagingReference p {margin:0;font-size:15px;line-height:1.7;}
+.packagingShrink {display:grid;grid-template-columns:1.1fr 1fr;gap:7vw;align-items:center;padding-bottom:85px;}
+.packagingShrink figure img {width:100%;height:390px;object-fit:cover;object-position:center 35%;display:block;}
+.packagingShrink figcaption {font-size:11px;color:#777;margin-top:12px;line-height:1.6;}
+.packagingShrink dl {margin:30px 0 0;}
+.packagingShrink dl>div {padding:16px 0;border-top:1px solid #e5ddd5;}
+.packagingShrink dt {font-size:12px;color:#777;margin-bottom:5px;}
+.packagingShrink dd {font-size:16px;margin:0;}
+@media(max-width:760px){
+ .packagingPage .packagingIntro,.packagingRange,.packagingShrink {grid-template-columns:1fr;gap:30px;}
+ .packagingPage .packagingIntro {padding-block:42px;}
+ .packagingIntro figure img {height:280px;}
+ .packagingRange {padding-block:38px 48px;}
+ .packagingShrink {padding-bottom:55px;}
+ .packagingShrink figure img {height:300px;}
+}

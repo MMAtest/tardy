@@ -16,11 +16,17 @@ mouton:{img:"/assets/Boyaux-de-Mouton.png",alt:"Schéma interactif des boyaux de
 ["Menus de mouton","/nos-produits/boyaux-de-mouton/menu-de-mouton/","63%","31%"],
 ] as string[][]}
 };
-export default function AnimalMap({kind,className=""}:{kind:Kind,className?:string}){
+const hdMaps = {
+ porc: { img: "/assets/Porc-1-1.png", width: 4500, height: 2656, positions: [[41, 37], [64, 46], [52, 60], [41, 63], [76, 44]] },
+ boeuf: { img: "/assets/Boeuf-2-1.png", width: 4412, height: 2771, positions: [[45, 36], [58, 52], [43, 60]] },
+ mouton: { img: "/assets/Mouton-2.png", width: 2735, height: 2359, positions: [[52, 44]] },
+};
+export default function AnimalMap({kind,className="",hd=true}:{kind:Kind,className?:string,hd?:boolean}){
  const m=maps[kind];
- return <div className={"animalMapReal "+className}>
-  <img src={m.img} alt={m.alt}/>
-  {m.spots.map(([label,href,left,top])=><a key={href} className="hotspot" style={{left,top}} href={href} data-label={label} aria-label={label}></a>)}
+ const asset=hd ? hdMaps[kind] : null;
+ return <div className={"animalMapReal "+className+(hd ? " animalMapHD" : "")} style={asset ? {aspectRatio: `${asset.width} / ${asset.height}`} : undefined}>
+  <img src={asset?.img ?? m.img} alt={m.alt} width={asset?.width} height={asset?.height}/>
+  {m.spots.map(([label,href,left,top],index)=><a key={href} className="hotspot" style={{left: asset ? `${asset.positions[index][0]}%` : left,top: asset ? `${asset.positions[index][1]}%` : top}} href={href} data-label={label} aria-label={label}></a>)}
   <div className="animalLegend">Cliquez sur une partie de l’animal</div>
  </div>
 }

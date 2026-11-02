@@ -548,7 +548,6 @@ body:has(main.tardyHomeParity) { margin: 0; }
 
 /* Large desktop: original photo offsets and dimensions, measured at 1440px. */
 @media (min-width: 1101px) {
-  .tardyHomeParity .parityHero { margin-top: 82px; }
   .tardyHomeParity .parityHistory {
     grid-template-columns: 43% 57%;
     gap: 0;
