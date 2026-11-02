@@ -1,46 +1,47 @@
 import AnimalMap from "../components/AnimalMap";
 import "./products-interactive.css";
 
-/**
- * Le catalogue garde son texte et son visuel de conditionnement d'origine.
- * Les quatre liens texte sont remplacés par les anciennes vignettes illustrées
- * (chaque illustration et son cartouche sont cliquables).
- */
 export const metadata = {
   title: "Nos produits",
   alternates: { canonical: "/nos-produits/" },
 };
 
-const categories = [
-  {
-    label: "Boyaux de porc et de truie",
-    image: "/assets/Porc-1-1.png",
-    alt: "Illustration de la catégorie boyaux de porc et de truie",
-    href: "/nos-produits/boyaux-de-porc/",
-    number: "01",
-  },
-  {
-    label: "Boyaux de bœuf",
-    image: "/assets/Boeuf-2-1.png",
-    alt: "Illustration de la catégorie boyaux de bœuf",
-    href: "/nos-produits/boyaux-de-boeuf/",
-    number: "02",
-  },
-  {
-    label: "Boyaux de mouton",
-    image: "/assets/Mouton-2.png",
-    alt: "Illustration de la catégorie boyaux de mouton",
-    href: "/nos-produits/boyaux-de-mouton/",
-    number: "03",
-  },
-  {
-    label: "Boyaux reconstitués",
-    image: "/assets/boyaux-porc-produit.png",
-    alt: "Illustration des boyaux reconstitués et manufacturés",
-    href: "/nos-produits/boyaux-manufactures/",
-    number: "04",
-  },
-];
+/**
+ * La quatrième famille n'a pas de schéma anatomique : les boyaux manufacturés
+ * sont obtenus par mise en forme. Ce diagramme distingue leurs trois formes.
+ * Chaque forme ouvre directement sa section descriptive existante.
+ */
+function ManufacturedDiagram() {
+  return (
+    <div className="manufacturedSchematic" aria-label="Schéma interactif des boyaux reconstitués">
+      <div className="manufacturedSchematicGrid">
+        <a href="/nos-produits/boyaux-manufactures/#fuseaux" aria-label="Découvrir les boyaux manufacturés en fuseaux">
+          <svg viewBox="0 0 120 170" aria-hidden="true">
+            <path d="M53 14 Q62 10 69 19 L94 150 Q61 163 26 150 Z" fill="#e8d7c9" stroke="#7c253f" strokeWidth="3" />
+            <path d="M57 26 L36 140 M68 27 L84 140" fill="none" stroke="#b88f84" strokeWidth="2" strokeDasharray="4 8" />
+          </svg>
+          <span>Fuseaux</span>
+        </a>
+        <a href="/nos-produits/boyaux-manufactures/#cylindriques" aria-label="Découvrir les boyaux manufacturés cylindriques">
+          <svg viewBox="0 0 120 170" aria-hidden="true">
+            <rect x="30" y="14" width="60" height="142" rx="17" fill="#e8d7c9" stroke="#7c253f" strokeWidth="3" />
+            <path d="M41 31 V140 M79 31 V140" fill="none" stroke="#b88f84" strokeWidth="2" strokeDasharray="5 8" />
+          </svg>
+          <span>Cylindriques</span>
+        </a>
+        <a href="/nos-produits/boyaux-manufactures/#mouchoirs" aria-label="Découvrir les boyaux manufacturés en feuilles">
+          <svg viewBox="0 0 120 170" aria-hidden="true">
+            <path d="M25 34 L83 25 L96 142 L36 152 Z" fill="#f3e9dc" stroke="#b88f84" strokeWidth="2" />
+            <path d="M18 22 L80 22 L80 142 L18 142 Z" fill="#e8d7c9" stroke="#7c253f" strokeWidth="3" />
+            <path d="M25 36 L72 36 M25 47 L72 47" fill="none" stroke="#b88f84" strokeWidth="2" />
+          </svg>
+          <span>Feuilles</span>
+        </a>
+      </div>
+      <p>Choisissez une forme pour découvrir ses caractéristiques</p>
+    </div>
+  );
+}
 
 export default function Page() {
   return (
@@ -62,56 +63,24 @@ export default function Page() {
           alt="Formats de conditionnement : fûts, seaux et pots"
         />
 
-        <nav
-          className="wpNaturalLinks wpNaturalVisualLinks"
-          aria-label="Choisir une famille de boyaux"
-        >
-          {categories.map((item) => (
-            <a
-              className="wpNaturalVisualCard"
-              href={item.href}
-              key={item.href}
-              aria-label={`Découvrir les ${item.label}`}
-            >
-              <span className="wpNaturalVisualImage">
-                <img src={item.image} alt={item.alt} loading="lazy" />
-                <span className="wpNaturalVisualIndex" aria-hidden="true">
-                  {item.number}
-                </span>
-              </span>
-              <span className="wpNaturalVisualInfo">
-                <span className="wpNaturalVisualName">{item.label}</span>
-                <span className="wpNaturalVisualArrow" aria-hidden="true">
-                  ↗
-                </span>
-              </span>
-            </a>
-          ))}
-        </nav>
-
-        <details className="wpNaturalInteractiveMaps">
-          <summary>
-            <span>Explorer les schémas interactifs des boyaux</span>
-            <span aria-hidden="true" className="wpNaturalMapsChevron">⌄</span>
-          </summary>
-          <div className="wpNaturalMapsGrid">
-            <section aria-label="Schéma interactif du porc">
-              <h3>Porc et truie</h3>
-              <AnimalMap kind="porc" />
-              <a href="/nos-produits/boyaux-de-porc/">Voir tous les boyaux de porc ↗</a>
-            </section>
-            <section aria-label="Schéma interactif du bœuf">
-              <h3>Bœuf</h3>
-              <AnimalMap kind="boeuf" />
-              <a href="/nos-produits/boyaux-de-boeuf/">Voir tous les boyaux de bœuf ↗</a>
-            </section>
-            <section aria-label="Schéma interactif du mouton">
-              <h3>Mouton</h3>
-              <AnimalMap kind="mouton" />
-              <a href="/nos-produits/boyaux-de-mouton/">Voir tous les boyaux de mouton ↗</a>
-            </section>
-          </div>
-        </details>
+        <div className="wpNaturalMapsGrid" aria-label="Les quatre schémas interactifs des boyaux">
+          <section aria-labelledby="diagram-porc">
+            <h3 id="diagram-porc">Porc et truie</h3>
+            <AnimalMap kind="porc" />
+          </section>
+          <section aria-labelledby="diagram-boeuf">
+            <h3 id="diagram-boeuf">Bœuf</h3>
+            <AnimalMap kind="boeuf" />
+          </section>
+          <section aria-labelledby="diagram-mouton">
+            <h3 id="diagram-mouton">Mouton</h3>
+            <AnimalMap kind="mouton" />
+          </section>
+          <section aria-labelledby="diagram-manufactures">
+            <h3 id="diagram-manufactures">Boyaux reconstitués</h3>
+            <ManufacturedDiagram />
+          </section>
+        </div>
       </section>
     </main>
   );
