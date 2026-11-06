@@ -18,7 +18,9 @@ export default function SiteHeader() {
       <div className="headerActions">
         <a className="headerCta" href="/contactez-nous/">Contact ↗</a>
         <details className="mobileMenu">
-          <summary>Menu</summary>
+          <summary aria-label="Menu principal">
+            <span className="mobileBurgerIcon" aria-hidden="true"><span /><span /><span /></span>
+          </summary>
           <nav className="mobilePanel" aria-label="Menu mobile">
             <details>
               <summary>Boyaux naturels</summary>

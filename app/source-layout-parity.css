@@ -222,13 +222,30 @@ main:not(.tardyHomeParity):not(.wpRestored) .technicalCatalog { background: #fff
     color:transparent!important;
     font-size:0!important;
   }
-  .siteHeader .mobileMenu > summary::before {
-    content:"";display:block;width:25px;height:16px;
-    border-top:2px solid #1c1c1c;border-bottom:2px solid #1c1c1c;
+  /* Real three-line icon instead of competing pseudo-elements.
+     Native details[open] makes the icon visibly become a close button. */
+  .siteHeader .mobileMenu > summary::before,
+  .siteHeader .mobileMenu > summary::after { content:none; }
+  .siteHeader .mobileBurgerIcon {
+    position:relative;display:block;width:26px;height:20px;
+    color:#1c1c1c;pointer-events:none;
   }
-  .siteHeader .mobileMenu > summary::after {
-    content:"";position:absolute;width:25px;height:2px;background:#1c1c1c;
-    top:calc(50% - 1px);left:calc(50% - 12.5px);
+  .siteHeader .mobileBurgerIcon span {
+    position:absolute;left:0;width:26px;height:2px;display:block;
+    background:currentColor;border-radius:2px;
+    transform-origin:center;
+    transition:top .22s ease,transform .22s ease,opacity .15s ease;
+  }
+  .siteHeader .mobileBurgerIcon span:nth-child(1) { top:2px; }
+  .siteHeader .mobileBurgerIcon span:nth-child(2) { top:9px; }
+  .siteHeader .mobileBurgerIcon span:nth-child(3) { top:16px; }
+  .siteHeader .mobileMenu[open] .mobileBurgerIcon span:nth-child(1) { top:9px;transform:rotate(45deg); }
+  .siteHeader .mobileMenu[open] .mobileBurgerIcon span:nth-child(2) { opacity:0; }
+  .siteHeader .mobileMenu[open] .mobileBurgerIcon span:nth-child(3) { top:9px;transform:rotate(-45deg); }
+  .siteHeader .mobileMenu > summary {cursor:pointer;touch-action:manipulation;}
+  .siteHeader .mobileMenu > summary:focus-visible {outline:2px solid #891536;outline-offset:3px;}
+  @media (prefers-reduced-motion:reduce) {
+    .siteHeader .mobileBurgerIcon span {transition:none;}
   }
   .siteHeader .headerInner {height:80px;grid-template-columns:minmax(0,1fr) auto;}
   .siteHeader .logo img {width:145px;}

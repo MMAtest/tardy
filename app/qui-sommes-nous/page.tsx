@@ -10,7 +10,7 @@ export default function Page(){
      <p>Spécialiste du boyau naturel depuis 1894</p>
      <div className="wpCompanyPhotos">
        <img src="/assets/Downloader.la-621786f021532.jpg" alt="Charcuteries et boyaux naturels" loading="eager"/>
-       <img src="/assets/wp-reference/Downloader.la-621786469ecff.jpg" alt="Installation de production et de conditionnement" loading="lazy"/>
+       <img src="/assets/home-original/hero.jpg" alt="Plateau de charcuteries et salaisons, savoir-faire de la maison Tardy" loading="lazy"/>
      </div>
    </section>
    <section className="wpCompanyHistory">
