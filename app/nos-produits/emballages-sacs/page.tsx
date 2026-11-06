@@ -10,7 +10,7 @@ export default function Page(){return <main className="wpRestored packagingPage"
       <p>Pour le conditionnement sous vide de votre charcuterie et de vos produits de salaison, la Société Tardy vous propose des sacs PA/PE et des sacs rétractables.</p>
       <a className="packagingLink" href="#nos-sacs">Découvrir nos sacs <span aria-hidden="true">↓</span></a>
     </div>
-    <figure><img src="/assets/packaging-vacuum.jpg" alt="Pièce de charcuterie conditionnée dans un sac sous vide" width="1800" height="1200" fetchPriority="high"/></figure>
+    <figure><img src="/assets/home-original/hero.jpg" alt="Assortiment de charcuteries artisanales, comme sur la page d’accueil" width="1800" height="1200" fetchPriority="high"/></figure>
   </section>
   <section className="packagingRange shell" id="nos-sacs" aria-labelledby="vacuum-title">
     <div className="packagingRangeHeading"><p className="packagingLabel">01 / Sacs sous vide</p><h2 id="vacuum-title">Une gamme PA/PE,<br/>trois épaisseurs.</h2><p>Retrouvez les références et les dimensions disponibles.</p></div>
